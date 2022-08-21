@@ -5,8 +5,17 @@ logo: assets/img/my_face.jpg
 plugins:
 - jekyll/scholar
 - jekyll-seo-tag
+- jekyll_picture_tag
 
 include: ['_pages']
+
+exclude:
+  - mydoc_writers_*
+  - bower_components
+  - Gemfile
+  - Rakefile
+  - LICENSE
+  - README.md
 
 sass:
   sass_dir: _sass
