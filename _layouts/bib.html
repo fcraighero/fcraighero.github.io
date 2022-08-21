@@ -1,0 +1,53 @@
+---
+---
+
+<div>
+    <div class="uk-text-bolder">
+        {{ entry.title }}
+    </div>
+    <div>
+        {%- for author in entry.author_array -%}
+        {{author.first}} {{author.last}}
+        {%- unless forloop.last -%}
+        ,&nbsp;
+        {% endunless %}
+        {%- endfor %}
+    </div>
+    <div>
+        {% if entry.type == "article" -%}
+        {%- capture entrytype -%}<div class="uk-text-primary">{{entry.journal}}</div>{%- endcapture -%}
+        {%- elsif entry.type == "inproceedings" -%}
+        {%- capture entrytype -%}<div class="uk-text-primary">In {{entry.booktitle}}</div> {%- endcapture -%}
+        {%- else -%}
+        {%- capture entrytype -%}{%- endcapture -%}
+        {%- endif -%}
+        {%- if entry.month -%}
+        {%- capture entrymonth -%}{{ " " }}{{ entry.month | capitalize }}{%- endcapture -%}
+        {%- endif -%}
+        {%- if entry.year -%}
+        {%- capture entryyear -%}{{ " " }}{{entry.year}}{%- endcapture -%}
+        {%- endif -%}
+        {%- capture periodical -%}{{ entrytype }}{%- endcapture -%}
+        <div>
+            {{ periodical | strip }}
+        </div>
+        <div>
+            {{ entryyear }}
+        </div>
+    </div>
+    <div>
+        {%- if entry.doi %}
+        <div class="uk-padding-small uk-padding-remove-horizontal uk-padding-remove-bottom">
+            <a class="uk-button uk-button-default uk-button-small uk-border-rounded" href="{{ entry.doi }}"
+                target="_blank">DOI</a>
+        </div>
+        {%- endif %}
+
+        {%- if entry.url %}
+        <div class="uk-padding-small uk-padding-remove-horizontal uk-padding-remove-bottom">
+            <a class="uk-button uk-button-default uk-button-small uk-border-rounded" href="{{ entry.url }}"
+                target="_blank">URL</a>
+        </div>
+        {%- endif %}
+    </div>
+</div>

@@ -1,0 +1,21 @@
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "" # the subpath of your site, e.g. /blog
+title: "Francesco Craighero" # the name of your site, e.g. ACME Corp.
+logo: assets/img/my_face.JPG
+
+plugins:
+- jekyll/scholar
+- jekyll-seo-tag
+
+include: ['_pages']
+
+sass:
+  sass_dir: _sass
+
+scholar:
+  style: apa
+  locale: en
+  bibliography_template: bib
+  bibliography_class: "uk-list uk-list-large uk-list-bullet"
+  sort_by: year
+  order: descending

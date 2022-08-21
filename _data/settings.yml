@@ -1,0 +1,5 @@
+social:
+- {icon-set: "academic", icon: 'google-scholar', name: 'Google Scholar', link: 'https://scholar.google.com/citations?user=1x3b508AAAAJ'}
+- {icon-set: "academic", icon: 'orcid', name: 'Orcid', link: ' https://orcid.org/0000-0001-8457-6979'}
+- {icon-set: "awesome", icon: 'linkedin', name: 'Linkedin', link: 'https://www.linkedin.com/in/francescocraighero/'}
+- {icon-set: "awesome", icon: 'twitter-square', name: 'Twitter', link: 'https://twitter.com/fcraighero'}
