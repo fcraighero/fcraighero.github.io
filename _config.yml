@@ -1,6 +1,5 @@
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-baseurl: "" # the subpath of your site, e.g. /blog
-title: "Francesco Craighero" # the name of your site, e.g. ACME Corp.
+url: "fcraighero.github.io"
+title: "Francesco Craighero"
 logo: assets/img/my_face.jpg
 
 plugins:
