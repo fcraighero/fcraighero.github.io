@@ -5,10 +5,9 @@
   current: true
 
 - type: abroad
-  date: From March to September 2022.
-  title: Contractor at IBM Research Zurich, Switzerland
+  date: From March to September 2022
+  title: Visiting at IBM Research Zurich, Switzerland
   desc: Collaboration with the <a href="https://www.zurich.ibm.com/compsysbio/" target="_blank">computational systems biology lab</a>, supervised by Dr. María Rodríguez Martínez.
-  current: true
 
 - type: grad
   date: 2018
