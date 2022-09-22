@@ -1,0 +1,14 @@
+{
+  "name": "fcraighero.github.io",
+  "version": "1.0.0",
+  "description": "Francesco Craighero Personal Website",
+  "main": "index.js",
+  "repository": "https://github.com/fcraighero/fcraighero.github.io.git",
+  "author": "Francesco Craighero <craighero.francesco@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.2.0",
+    "academicons": "^1.9.2",
+    "uikit": "^3.15.6"
+  }
+}
