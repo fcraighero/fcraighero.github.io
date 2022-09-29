@@ -7,87 +7,84 @@
 </head>
 
 <body>
-  <div class="uk-cover-container">
-    <div id="js-oversized" class="uk-grid-collapse uk-grid-match uk-text-center" uk-grid>
-      <div class="uk-width-1-4@m uk-background-primary uk-light">
-        <div class="uk-flex uk-padding" uk-sticky="end: #js-oversized; media: @m; overflow-flip: true">
-          <div class="uk-margin-auto uk-margin-auto-vertical">
-            <div class="uk-visible@m">
-              <h3><strong>Francesco</strong> Craighero</h3>
+  <div class="uk-grid-collapse uk-child-width-expand@m" uk-grid>
+    <div class="uk-width-1-4@m uk-background-primary uk-light uk-text-center">
+      <div class="uk-flex uk-padding" uk-sticky="end: #js-oversized; media: @m; end: true">
+        <div class="uk-margin-auto uk-margin-auto-vertical">
+          <div class="uk-visible@m">
+            <h3><strong>Francesco</strong> Craighero</h3>
+            {% picture "{{site.logo | relative_url}}" class="uk-border-circle" style="border: 1px solid #FDF4F0;"
+            width="200" height="200" alt="Logo"%}
+          </div>
+          <div class="uk-padding-small"></div>
+          <div class="uk-grid-small uk-flex-middle uk-hidden@m" uk-grid>
+            <div class="uk-padding-small uk-padding-remove-top uk-padding-remove-horizontal uk-width-auto">
               {% picture "{{site.logo | relative_url}}" class="uk-border-circle" style="border: 1px solid #FDF4F0;"
-              width="200" height="200" alt="Logo"%}
+              width="100" height="100" alt="Logo"%}
             </div>
-            <div class="uk-padding-small"></div>
-            <div class="uk-grid-small uk-flex-middle uk-hidden@m" uk-grid>
-              <div class="uk-padding-small uk-padding-remove-top uk-padding-remove-horizontal uk-width-auto">
-                {% picture "{{site.logo | relative_url}}" class="uk-border-circle" style="border: 1px solid #FDF4F0;"
-                width="100" height="100" alt="Logo"%}
-              </div>
-              <div class="uk-width-expand">
-                <div class="uk-logo"><strong>Francesco</strong><br>Craighero</div>
-              </div>
-            </div>
-            <div class="uk-padding-small uk-padding-remove-top uk-padding-remove-horizontal uk-text-primary">
-              PhD Candidate <br>
-              University Milano-Bicocca
-            </div>
-            <div class="uk-visible@m">
-              <ul
-                class="uk-nav uk-nav-default uk-nav-center uk-padding-small uk-padding-remove-top uk-padding-remove-horizontal">
-                {% assign sorted_pages = site.html_pages | sort:"order" %}
-                {%- for node in sorted_pages -%}
-                {% if page.url == node.url %}
-                <li class="uk-active"><a href="{{ node.url }}">{{ node.title }}</a></li>
-                {% else %}
-                <li><a href="{{ node.url }}">{{ node.title }}</a></li>
-                {% endif %}
-                {% endfor %}
-              </ul>
-            </div>
-            <div class="uk-hidden@m">
-              <ul class="uk-breadcrumb">
-                {% assign sorted_pages = site.html_pages | sort:"order" %}
-                {%- for node in sorted_pages -%}
-                {% if page.url == node.url %}
-                <li class="uk-active"><a href="{{ node.url }}">{{ node.title }}</a></li>
-                {% else %}
-                <li><a href="{{ node.url }}">{{ node.title }}</a></li>
-                {% endif %}
-                {% endfor %}
-              </ul>
-            </div>
-            <div>
-              {% for item in site.data.settings.social %}
-              {%if item.icon-set == 'academic' %}
-              <a href="{{ item.link }}" class="ai ai-{{ item.icon }}-square ai-2x uk-link-muted" aria-hidden="true"></a>
-              {%elsif item.icon-set == 'awesome' %}
-              <a href="{{ item.link }}" class="fab fa-{{ item.icon }} fa-2x uk-link-muted" aria-hidden="true"></a>
-              {% else %}
-              <!--empty-->
-              {% endif %}
-              {% endfor %}
+            <div class="uk-width-expand">
+              <div class="uk-logo"><strong>Francesco</strong><br>Craighero</div>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="uk-width-expand">
-        <div class="uk-flex uk-background-secondary uk-padding uk-dark" uk-height-viewport>
-          <div class="uk-width-expand" uk-grid>
-            <div class="uk-text-justify">{{ content }}</div>
-            <div class="uk-padding"></div>
-            <div class="uk-margin-auto-top uk-margin-auto-left uk-text-small">
-              Hosted on GitHub Pages.
-
-              <a href="https://www.iubenda.com/privacy-policy/62537482" target="_blank" title="Privacy Policy">Privacy
-                Policy</a>.
-            </div>
+          <div class="uk-padding-small uk-padding-remove-top uk-padding-remove-horizontal uk-text-primary">
+            PhD Candidate <br>
+            University Milano-Bicocca
+          </div>
+          <div class="uk-visible@m">
+            <ul
+              class="uk-nav uk-nav-default uk-nav-center uk-padding-small uk-padding-remove-top uk-padding-remove-horizontal">
+              {% assign sorted_pages = site.html_pages | sort:"order" %}
+              {%- for node in sorted_pages -%}
+              {% if page.url == node.url %}
+              <li class="uk-active"><a href="{{ node.url }}">{{ node.title }}</a></li>
+              {% else %}
+              <li><a href="{{ node.url }}">{{ node.title }}</a></li>
+              {% endif %}
+              {% endfor %}
+            </ul>
+          </div>
+          <div class="uk-hidden@m">
+            <ul class="uk-breadcrumb">
+              {% assign sorted_pages = site.html_pages | sort:"order" %}
+              {%- for node in sorted_pages -%}
+              {% if page.url == node.url %}
+              <li class="uk-active"><a href="{{ node.url }}">{{ node.title }}</a></li>
+              {% else %}
+              <li><a href="{{ node.url }}">{{ node.title }}</a></li>
+              {% endif %}
+              {% endfor %}
+            </ul>
+          </div>
+          <div>
+            {% for item in site.data.settings.social %}
+            {%if item.icon-set == 'academic' %}
+            <a href="{{ item.link }}" class="ai ai-{{ item.icon }}-square ai-2x uk-link-muted" aria-hidden="true"></a>
+            {%elsif item.icon-set == 'awesome' %}
+            <a href="{{ item.link }}"> <i class="fab fa-{{ item.icon }} fa-2x uk-icon-link" aria-hidden="true"> </i></a>
+            {% else %}
+            <!--empty-->
+            {% endif %}
+            {% endfor %}
           </div>
         </div>
       </div>
     </div>
+    <div class="uk-background-secondary uk-padding uk-dark" uk-height-viewport>
+      <div class="uk-width-expand">
+        <div class="uk-text-justify">{{ content }}</div>
+        <div class="uk-padding"></div>
+        <div class="uk-margin-auto-top uk-text-right uk-text-small">
+          Hosted on GitHub Pages.
+          <a href="https://www.iubenda.com/privacy-policy/62537482" target="_blank" title="Privacy Policy">Privacy
+            Policy</a>.
+        </div>
+      </div>
+    </div>
+  </div>
 
-    <footer>
-    </footer>
+  <footer>
+  </footer>
+  </div>
   </div>
 </body>
 

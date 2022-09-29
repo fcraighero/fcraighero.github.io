@@ -1,0 +1,35 @@
+// 1. Custom variables and variable overwrites.
+$cprimary: #637589;
+$csecondary: #FDF4F0;
+$caccent: #BE7173;
+$cmuted: #632626;
+
+$global-primary-background: $cprimary;
+$global-secondary-background: $csecondary;
+
+$description-list-term-color: $cprimary;
+$card-default-background: lighten($csecondary, 2%);
+$base-heading-color: $cprimary;
+$global-color: $cprimary;
+$global-inverse-color: $csecondary;
+$global-emphasis-color: $caccent;
+$global-link-color: $caccent;
+$global-link-hover-color: $caccent;
+
+// 2. Import default variables and available mixins.
+@import "~uikit/src/scss/variables-theme.scss";
+@import "~uikit/src/scss/mixins-theme.scss";
+
+// 3. Custom mixin overwrites.
+
+// 4. Import UIkit.
+@import "~uikit/src/scss/uikit-theme.scss";
+
+// Fontawesome
+// $fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
+// @import '~@fortawesome/fontawesome-free/scss/fontawesome';
+// @import '~@fortawesome/fontawesome-free/scss/solid';
+// @import '~@fortawesome/fontawesome-free/scss/regular';
+// @import '~@fortawesome/fontawesome-free/scss/brands';
+
+@import '~academicons/css/academicons.css'

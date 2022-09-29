@@ -6,16 +6,12 @@ layout: default
 
 <h1>News</h1>
 <div class="uk-card uk-card-default uk-card-small uk-card-body uk-box-shadow-large uk-border-rounded">
-    <table class="uk-table uk-table-divider">
-        <tbody>
-            {% for el in site.data.news %}
-            <tr>
-                <td class="uk-text-uppercase uk-text-bold uk-width-small">{{el.date}}</td>
-                <td>{{el.body}}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+    <dl class="uk-description-list">
+        {% for el in site.data.news %}
+        <dt>{{el.date}}</dt>
+        <dd>{{el.body}}</dd>
+        {% endfor %}
+    </dl>
 </div>
 
 
