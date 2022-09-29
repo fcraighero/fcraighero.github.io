@@ -1,5 +1,5 @@
-# Hello there :wave:
-Welcome to my personal blog repo, built with love and [Jekyll](https://jekyllrb.com/), [Webpack](https://webpack.js.org/) and [UIkit](https://getuikit.com/).
+## Hello there :wave:
+Welcome to my personal blog repo, built with :heart:, [Jekyll](https://jekyllrb.com/), [Webpack](https://webpack.js.org/) and [UIkit](https://getuikit.com/).
 
 ### Jekyll extensions
 * [Jekyll-scholar](https://github.com/inukshuk/jekyll-scholar) for importing bilbiographies.
