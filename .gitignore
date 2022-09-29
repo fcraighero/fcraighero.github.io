@@ -1,5 +1,6 @@
 .sass-cache/
 node_modules/
+assets/
 .jekyll-cache/
 .jekyll-metadata
 *.log*
