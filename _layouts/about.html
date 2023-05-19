@@ -16,10 +16,11 @@ layout: default
 
 
 <h1>Career Summary</h1>
+{% assign current_el = site.data.career | where: "current", true %}
+{% if el.current.size > 0 %}
 <div class="uk-card uk-card-default uk-card-small uk-card-body uk-box-shadow-large uk-border-rounded">
     <div class="uk-card-badge uk-label uk-border-rounded">Current</div>
     <ul class='fa-ul'>
-        {% assign current_el = site.data.career | where: "current", true %}
         {% for el in current_el %}
         <li>
             {% if el.type == "abroad" %}
@@ -33,10 +34,12 @@ layout: default
             </dl>
         </li>
         {% endfor %}
+        {% endif %}
 </div>
+{% assign current_el = site.data.career | where: "current", false %}
+{% if el.current.size > 0 %}
 <ul class='fa-ul'>
-    {% for el in site.data.career %}
-    {% if el.current != true %}
+    {% for el in current_el %}
     <li>
         {% if el.type == "abroad" %}
         <i class="fa-li fas fa-plane-departure fa-lg"></i>
@@ -48,6 +51,6 @@ layout: default
             <dd>{{el.desc}}</dd>
         </dl>
     </li>
-    {% endif %}
     {% endfor %}
+    {% endif %}
 </ul>

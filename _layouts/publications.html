@@ -7,7 +7,12 @@ layout: default
 
 <div class="uk-width-expand">
     <ul uk-accordion="multiple: true">
-
+        <li class="uk-open">
+            <a class="uk-accordion-title" href="#">2023</a>
+            <div class="uk-accordion-content">
+                {% bibliography --query @*[year=2023] %}
+            </div>
+        </li>
         <li class="uk-open">
             <a class="uk-accordion-title" href="#">2021</a>
             <div class="uk-accordion-content">
