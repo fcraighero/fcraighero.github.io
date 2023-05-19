@@ -17,7 +17,7 @@ layout: default
 
 <h1>Career Summary</h1>
 {% assign current_el = site.data.career | where: "current", true %}
-{% if el.current.size > 0 %}
+{% if current_el.size > 0 %}
 <div class="uk-card uk-card-default uk-card-small uk-card-body uk-box-shadow-large uk-border-rounded">
     <div class="uk-card-badge uk-label uk-border-rounded">Current</div>
     <ul class='fa-ul'>
@@ -36,8 +36,8 @@ layout: default
         {% endfor %}
         {% endif %}
 </div>
-{% assign current_el = site.data.career | where: "current", false %}
-{% if el.current.size > 0 %}
+{% assign current_el = site.data.career | where_exp: "item", "item.current == nil or item.current == false"%}
+{% if current_el.size > 0 %}
 <ul class='fa-ul'>
     {% for el in current_el %}
     <li>
