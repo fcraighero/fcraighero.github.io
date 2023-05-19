@@ -1,4 +1,4 @@
-## Hello there :wave:
+# Hello there :wave:
 Welcome to my personal blog repo, built with :heart:, [Jekyll](https://jekyllrb.com/), [Webpack](https://webpack.js.org/) and [UIkit](https://getuikit.com/).
 
 ### Jekyll extensions

@@ -1,11 +1,10 @@
 - type: grad
-  date: Ending in 2023
-  title: PhD in Deep Learning
+  date: 05.2023
+  title: PhD in Computer Science
   desc: <a href="https://phd-computer-science.disco.unimib.it/" target="_blank">University of Milano-Bicocca</a>, Italy.
-  current: true
 
 - type: abroad
-  date: From March to September 2022
+  date: 2022 (6 months)
   title: Visiting at IBM Research Zurich, Switzerland
   desc: Collaboration with the <a href="https://www.zurich.ibm.com/compsysbio/" target="_blank">computational systems biology lab</a>, supervised by Dr. María Rodríguez Martínez.
 
