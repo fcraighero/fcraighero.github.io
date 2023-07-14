@@ -43,11 +43,13 @@ layout: default
     <li>
         {% if el.type == "abroad" %}
         <i class="fa-li fas fa-plane-departure fa-lg"></i>
+        {% elsif el.type == "research" %}
+        <i class="fa-li fas fa-microscope fa-lg"></i>
         {% elsif el.type == "grad" %}
         <i class="fa-li fas fa-graduation-cap fa-lg"></i>
         {% endif %}
         <dl class="uk-description-list">
-            <dt>{{el.title}}. {{el.date}}.</dt>
+            <dt>{{el.title}} -- {{el.date}}.</dt>
             <dd>{{el.desc}}</dd>
         </dl>
     </li>
