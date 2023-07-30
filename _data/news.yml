@@ -1,8 +1,11 @@
+- date: 23 July, 2023
+  body: My work on adversarial examples detection has been accepted by the Neurocomputing journal! (<a href="https://doi.org/10.1016/j.neucom.2023.126576">link</a>)
+
 - date: 1 July, 2023
   body: I joined the Signal Processing Laboratory LTS2 at EPFL as a Postdoctoral Researcher! In this new adventure, I will be supervised by Prof. Pierre Vandergheynst.
 
 - date: 15 May, 2023
   body: I completed my PhD in Computer Science! You can find my thesis titled "Three Perspectives on Anomaly Detection in Deep Learning" <a href="https://hdl.handle.net/10281/415537">here</a>.
 
-- date: 24 Nov, 2021
-  body: Check out <a href="https://arxiv.org/abs/2111.12631">my latest work</a> on detecting adverarial attacks given the latent features of a Convolutional Neural Network!
+# - date: 24 Nov, 2021
+#   body: Check out <a href="https://arxiv.org/abs/2111.12631">my latest work</a> on detecting adverarial attacks given the latent features of a Convolutional Neural Network!
