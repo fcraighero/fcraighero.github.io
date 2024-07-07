@@ -35,6 +35,9 @@
             {{ entryyear }}
         </div>
     </div>
+    {%- if entry.note -%}
+        <div class="uk-text-bold">{{entry.note}}</div>
+    {%- endif -%}
     <div>
         {%- if entry.doi %}
         <div class="uk-padding-small uk-padding-remove-horizontal uk-padding-remove-bottom">
