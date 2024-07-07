@@ -1,6 +1,6 @@
 url: "https://fcraighero.github.io"
 title: "Francesco Craighero"
-logo: assets/img/my_face.jpg
+logo: images/my_face.jpg
 
 plugins:
 - jekyll/scholar
