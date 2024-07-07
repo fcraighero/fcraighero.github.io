@@ -7,6 +7,10 @@ module.exports = {
     path: path.resolve(__dirname, 'assets'),
     filename: '[name]-bundle.js',
   },
+  performance: {
+    maxEntrypointSize: 512000,
+    maxAssetSize: 512000,
+  },
   resolve: {
     extensions: ['.json', '.js', '.jsx'],
     modules: ['node_modules'],
