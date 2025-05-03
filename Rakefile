@@ -24,7 +24,7 @@ task :deploy do
   status = system("git filter-branch --subdirectory-filter _site/ -f")
   puts status ? "Success" : "Failed"
   puts "\n## Pushing branche to origin"
-  status = system("git push origin --force")
+  status = system("git push -f origin master")
   puts status ? "Success" : "Failed"
   puts "\n## Switching back to source branch"
   status = system("git checkout source")
