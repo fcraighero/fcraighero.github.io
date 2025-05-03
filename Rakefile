@@ -23,11 +23,11 @@ task :deploy do
   puts "\n## Forcing the _site subdirectory to be project root"
   status = system("git filter-branch --subdirectory-filter _site/ -f")
   puts status ? "Success" : "Failed"
+  puts "\n## Pushing branche to origin"
+  status = system("git push origin --force")
+  puts status ? "Success" : "Failed"
   puts "\n## Switching back to source branch"
   status = system("git checkout source")
-  puts status ? "Success" : "Failed"
-  puts "\n## Pushing all branches to origin"
-  status = system("git push --all origin")
   puts status ? "Success" : "Failed"
 end
 
