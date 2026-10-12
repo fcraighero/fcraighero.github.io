@@ -28,6 +28,9 @@ end
 
 desc "Deploy _site/ to the master branch"
 task :deploy do
+  unless `git status --porcelain`.strip.empty?
+    abort "Working tree is not clean (git status). Commit or stash changes before deploying."
+  end
   puts "\n## Recreating master from _site/"
   system("git branch -D master")
   system("git checkout -b master")
