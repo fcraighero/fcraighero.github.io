@@ -1,0 +1,10 @@
+<div class="social">
+  <ul class="social-icons">
+    {%- for s in site.data.socials %}
+    <li><a href="{{ s.url }}" rel="me noopener noreferrer" title="{{ s.name }}" aria-label="{{ s.name }}">{% include icons/{{ s.icon }}.svg %}</a></li>
+    {%- endfor %}
+  </ul>
+  {%- if site.contact_note and site.contact_note != "" %}
+  <p class="contact-note">{{ site.contact_note }}</p>
+  {%- endif %}
+</div>

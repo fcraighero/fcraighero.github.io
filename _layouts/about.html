@@ -1,58 +1,33 @@
 ---
 layout: default
 ---
+<div class="post">
+  <header class="post-header">
+    <h1 class="post-title"><strong>{{ site.first_name }}</strong> {{ site.last_name }}</h1>
+    <p class="desc">{{ site.position }}</p>
+  </header>
 
-{{ content }}
+  <article>
+    <div class="profile">
+      <img src="{{ '/assets/img/prof_pic.jpg' | relative_url }}" width="560" height="560"
+           alt="Portrait of {{ site.first_name }} {{ site.last_name }}">
+      {%- if site.profile_note %}
+      <div class="more-info">{{ site.profile_note }}</div>
+      {%- endif %}
+    </div>
 
-<h1>News</h1>
-<div class="uk-card uk-card-default uk-card-small uk-card-body uk-box-shadow-large uk-border-rounded">
-    <dl class="uk-description-list">
-        {% for el in site.data.news %}
-        <dt>{{el.date}}</dt>
-        <dd>{{el.body}}</dd>
-        {% endfor %}
-    </dl>
+    <div class="clearfix">
+      {{ content }}
+    </div>
+
+    {%- if site.data.news.size > 0 %}
+    <h2 class="section-title"><span class="accent">news</span></h2>
+    {% include news.html limit=page.news_limit %}
+    {%- endif %}
+
+    <h2 class="section-title"><a href="{{ '/publications/' | relative_url }}">selected publications</a></h2>
+    {% bibliography --group_by none --query @*[selected=true] %}
+
+    {% include social.html %}
+  </article>
 </div>
-
-
-<h1>Career Summary</h1>
-{% assign current_el = site.data.career | where: "current", true %}
-{% if current_el.size > 0 %}
-<div class="uk-card uk-card-default uk-card-small uk-card-body uk-box-shadow-large uk-border-rounded">
-    <div class="uk-card-badge uk-label uk-border-rounded">Current</div>
-    <ul class='fa-ul'>
-        {% for el in current_el %}
-        <li>
-            {% if el.type == "abroad" %}
-            <i class="fa-li fas fa-plane-departure fa-lg"></i>
-            {% elsif el.type == "grad" %}
-            <i class="fa-li fas fa-graduation-cap fa-lg"></i>
-            {% endif %}
-            <dl class="uk-description-list">
-                <dt>{{el.title}}. {{el.date}}.</dt>
-                <dd>{{el.desc}}</dd>
-            </dl>
-        </li>
-        {% endfor %}
-        {% endif %}
-</div>
-{% assign current_el = site.data.career | where_exp: "item", "item.current == nil or item.current == false"%}
-{% if current_el.size > 0 %}
-<ul class='fa-ul'>
-    {% for el in current_el %}
-    <li>
-        {% if el.type == "abroad" %}
-        <i class="fa-li fas fa-plane-departure fa-lg"></i>
-        {% elsif el.type == "research" %}
-        <i class="fa-li fas fa-microscope fa-lg"></i>
-        {% elsif el.type == "grad" %}
-        <i class="fa-li fas fa-graduation-cap fa-lg"></i>
-        {% endif %}
-        <dl class="uk-description-list">
-            <dt>{{el.title}} -- {{el.date}}.</dt>
-            <dd>{{el.desc}}</dd>
-        </dl>
-    </li>
-    {% endfor %}
-    {% endif %}
-</ul>

@@ -1,9 +1,8 @@
 source "https://rubygems.org"
 
+gem "jekyll", "~> 4.3"
+gem "webrick"   # needed by `jekyll serve` on Ruby >= 3
 
-gem 'racc'
-gem 'webrick'
-gem 'jgd'
-gem "jekyll-seo-tag"
-gem 'jekyll-scholar', group: :jekyll_plugins
-gem "jekyll_picture_tag", group: :jekyll_plugins
+group :jekyll_plugins do
+  gem "jekyll-scholar", "~> 7.2"
+end

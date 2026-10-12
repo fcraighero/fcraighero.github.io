@@ -1,36 +1,41 @@
-desc "Commit _site/"
-task :commit do
+# Build locally, then publish _site/ to the `master` branch (served by GitHub Pages).
+# Usage:  rake build          -> build into _site/
+#         rake serve          -> local preview at http://localhost:4000
+#         rake commit_deploy  -> build, commit, and deploy
+
+SOURCE_BRANCH = `git rev-parse --abbrev-ref HEAD`.strip
+
+desc "Build the site into _site/"
+task :build do
+  sh "JEKYLL_ENV=production bundle exec jekyll build"
+end
+
+desc "Serve the site locally"
+task :serve do
+  sh "bundle exec jekyll serve"
+end
+
+desc "Commit sources and _site/"
+task :commit => :build do
   puts "\n## Staging modified files"
-  status = system("git add -A")
-  puts status ? "Success" : "Failed"
-  puts "\n## Committing a site build at #{Time.now.utc}"
+  system("git add -A")
   message = "Build site at #{Time.now.utc}"
-  status = system("git commit -m \"#{message}\"")
-  puts status ? "Success" : "Failed"
-  puts "\n## Pushing commits to remote"
-  status = system("git push -f origin source")
-  puts status ? "Success" : "Failed"
+  puts "\n## Committing: #{message}"
+  system("git commit -m \"#{message}\"")
+  puts "\n## Pushing #{SOURCE_BRANCH}"
+  system("git push origin #{SOURCE_BRANCH}")
 end
 
-desc "Deploy _site/ to master branch"
+desc "Deploy _site/ to the master branch"
 task :deploy do
-  puts "\n## Deleting master branch"
-  status = system("git branch -D master")
-  puts status ? "Success" : "Failed"
-  puts "\n## Creating new master branch and switching to it"
-  status = system("git checkout -b master")
-  puts status ? "Success" : "Failed"
-  puts "\n## Forcing the _site subdirectory to be project root"
-  status = system("git filter-branch --subdirectory-filter _site/ -f")
-  puts status ? "Success" : "Failed"
-  puts "\n## Switching back to source branch"
-  status = system("git checkout source")
-  puts status ? "Success" : "Failed"
-  puts "\n## Pushing all branches to origin"
-  status = system("git push --all origin")
-  puts status ? "Success" : "Failed"
+  puts "\n## Recreating master from _site/"
+  system("git branch -D master")
+  system("git checkout -b master")
+  system("git filter-branch --subdirectory-filter _site/ -f")
+  system("git checkout #{SOURCE_BRANCH}")
+  puts "\n## Pushing master"
+  system("git push -f origin master")
 end
 
-desc "Commit and deploy _site/"
-task :commit_deploy => [:commit, :deploy] do
-end
+desc "Build, commit and deploy"
+task :commit_deploy => [:commit, :deploy]

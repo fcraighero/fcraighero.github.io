@@ -1,0 +1,26 @@
+---
+layout: page
+---
+{{ content }}
+<ol class="cv">
+  {%- assign current = site.data.career | where: "current", true %}
+  {%- assign past = site.data.career | where_exp: "e", "e.current != true" %}
+  {%- assign entries = current | concat: past %}
+  {%- for e in entries %}
+  <li>
+    <span class="cv-icon">
+      {%- case e.type -%}
+        {%- when "grad" -%}{% include icons/grad.svg %}
+        {%- when "abroad" -%}{% include icons/abroad.svg %}
+        {%- when "research" -%}{% include icons/research.svg %}
+        {%- else -%}{% include icons/work.svg %}
+      {%- endcase -%}
+    </span>
+    <span class="cv-date">{{ e.date }}</span>
+    <div class="cv-body">
+      <div class="cv-title">{{ e.title }}{% if e.current %}<span class="current-badge">current</span>{% endif %}</div>
+      <div class="cv-desc">{{ e.desc }}</div>
+    </div>
+  </li>
+  {%- endfor %}
+</ol>

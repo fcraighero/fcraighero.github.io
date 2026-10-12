@@ -1,29 +1,71 @@
+# -----------------------------------------------------------------------------
+# Site settings
+# -----------------------------------------------------------------------------
+# A deliberately minimal, al-folio-inspired academic site.
+# Privacy by design: no analytics, no cookies, no JavaScript, no CDNs,
+# no web fonts, no embeds. Every asset is served from this domain.
+
+first_name: Francesco
+last_name: Craighero
+title: Francesco Craighero
+position: >-
+  Scientist at <a href="https://www.epfl.ch/">EPFL</a>, working with the
+  <a href="https://lts2.epfl.ch/">Signal Processing Laboratory 2 (LTS2)</a> and the
+  <a href="https://www.epfl.ch/labs/naef-lab/">Naef Lab</a>
+description: >-
+  Francesco Craighero — scientist at EPFL working on machine learning for
+  biology, anomaly detection and interpretability.
+lang: en
 url: "https://fcraighero.github.io"
-title: "Francesco Craighero"
-logo: images/my_face.jpg
+baseurl: ""
+
+# Short note shown under the profile picture on the about page
+profile_note: EPFL, Lausanne, Switzerland
+
+# Contact note shown under the social icons
+contact_note: ""
+
+# Last name to highlight in author lists
+scholar_last_name: [Craighero]
+
+# Max authors shown before collapsing the rest into "and N more"
+max_author_limit: 6
+
+# -----------------------------------------------------------------------------
+# Build settings
+# -----------------------------------------------------------------------------
+markdown: kramdown
+permalink: pretty
+include: ["_pages"]
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - Rakefile
+  - README.md
+  - LICENSE
+  - vendor
+  - .bundle
 
 plugins:
-- jekyll/scholar
-- jekyll-seo-tag
-- jekyll_picture_tag
+  - jekyll/scholar
 
-include: ['_pages']
-
-exclude:
-  - mydoc_writers_*
-  - bower_components
-  - Gemfile
-  - Rakefile
-  - LICENSE
-  - README.md
-
-sass:
-  sass_dir: _sass
-
+# -----------------------------------------------------------------------------
+# Jekyll Scholar
+# -----------------------------------------------------------------------------
 scholar:
+  source: /_bibliography/
+  bibliography: papers.bib
+  bibliography_template: bib
   style: apa
   locale: en
-  bibliography_template: bib
-  bibliography_class: "uk-list uk-list-large uk-list-bullet"
-  sort_by: year
+  sort_by: year,month
   order: descending
+  group_by: year
+  group_order: descending
+  bibliography_group_tag: h2
+  bibliography_list_tag: ol
+  bibliography_item_tag: li
+  replace_strings: true
+  join_strings: true
+  # Fields used only by the site, hidden from the BibTeX shown to visitors
+  bibtex_skip_fields: [abbr, abstract, selected, pdf, html, award, month_numeric]

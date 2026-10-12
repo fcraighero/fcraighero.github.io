@@ -1,0 +1,12 @@
+<table class="news-table">
+  <tbody>
+    {%- assign items = site.data.news %}
+    {%- if include.limit %}{% assign items = items | slice: 0, include.limit %}{% endif %}
+    {%- for item in items %}
+    <tr>
+      <th scope="row">{{ item.date }}</th>
+      <td>{{ item.body }}</td>
+    </tr>
+    {%- endfor %}
+  </tbody>
+</table>

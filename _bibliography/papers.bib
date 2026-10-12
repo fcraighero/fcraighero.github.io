@@ -1,0 +1,215 @@
+---
+---
+
+% Site-only fields (hidden from the BibTeX shown to visitors, see _config.yml):
+%   abbr     = short venue badge shown next to the entry
+%   selected = {true} to list the paper under "selected publications" on the home page
+%   html     = landing page of the paper
+%   pdf      = link to a PDF (a URL, or a file name inside assets/pdf/)
+%   award    = highlighted note (award, spotlight, oral, ...)
+%   abstract = shown with the ABS toggle
+
+@article{jimenez2026interpretable,
+  abbr      = {Nat. Med.},
+  selected  = {true},
+  title     = {Interpretable inflammation landscape of circulating immune cells},
+  author    = {Jim{\'e}nez-Gracia, Laura and Maspero, Davide and Aguilar-Fern{\'a}ndez, Sergio and Craighero, Francesco and Boulougouri, Maria and Ruiz, Max and Marchese, Domenica and Carat{\`u}, Ginevra and Li{\~n}ares-Blanco, Jose and Berasategi, Miren and Ramirez Flores, Ricardo O. and Sanzo-Machuca, Angela and Corraliza, Ana M. and Tran, Hoang A. and Normand, Rachelly and Nestor, Jacquelyn and Hong, Yourae and Kole, Tessa and Van Der Velde, Petra and Alleblas, Frederique and Pedretti, Flaminia and Aterido, Adri{\`a} and Banchero, Martin and Soriano, German and Rom{\'a}n, Eva and Van Den Berge, Maarten and Salas, Azucena and Carrascosa, Jose Manuel and Fern{\'a}ndez Nebro, Antonio and Dom{\`e}nech, Eugeni and Ca{\~n}ete, Juan D. and Tornero, Jes{\'u}s and Gisbert, Javier P. and Choy, Ernest and Girolomoni, Giampiero and Siegmund, Britta and Juli{\`a}, Antonio and Serra, Violeta and Elosua, Roberto and Tejpar, Sabine and Vidal, Silvia and Nawijn, Martijn C. and Gut, Ivo and Saez-Rodriguez, Julio and Marsal, Sara and Villani, Alexandra-Chlo{\'e} and Nieto, Juan C. and Heyn, Holger},
+  journal   = {Nature Medicine},
+  volume    = {32},
+  number    = {2},
+  pages     = {633--644},
+  year      = {2026},
+  month     = feb,
+  publisher = {Nature Publishing Group US},
+  doi       = {10.1038/s41591-025-04126-3},
+  html      = {https://www.nature.com/articles/s41591-025-04126-3}
+}
+
+@inproceedings{nallapareddy2026biodistiller,
+  abbr      = {ICLR WS},
+  selected  = {true},
+  title     = {{BIO-Distiller}: Boosting Supervised Baselines by Distilling Biological Foundation Models},
+  author    = {Nallapareddy, Mohan Vamsi and Boulougouri, Maria and Vandergheynst, Pierre and Craighero, Francesco},
+  booktitle = {ICLR 2026 Workshop on Machine Learning for Genomics Explorations (MLGenX)},
+  year      = {2026},
+  month     = apr,
+  html      = {https://openreview.net/forum?id=R3W8AgdZnv},
+  abstract  = {The success of foundation models has driven their application to biological data, including RNA, DNA, and protein sequences. These are expected to adapt to new tasks, while also providing novel insights into molecular function and biological mechanisms underlying health and disease. Despite recent advances, benchmarks show that biological foundation models fail to consistently outperform simpler supervised approaches. Moreover, key challenges remain, such as the development of faithful interpretation methods and the integration of multiple modalities. Here, we propose BIO-Distiller, a framework to distill the rich information from biological foundation models into smaller models. In our benchmark on six RNA downstream tasks, we first show that well-tuned supervised baselines can still outperform foundation models. Furthermore, knowledge distillation consistently boosts the baselines' performance by up to 10% across all tasks. Additionally, our framework is capable of integrating multiple foundation models, whether from the same modality by exploiting design and pre-training differences, or across different modalities. The results not only confirm the potential of BIO-Distiller but also provide guidelines for its application to new tasks and modalities, paving the way toward high-performing, efficient, and easily interpretable supervised models for biology.}
+}
+
+@article{nallapareddyConditionalDeepLearning2025,
+  abbr      = {Commun. Biol.},
+  selected  = {true},
+  title     = {Conditional deep learning model reveals translation elongation determinants during amino acid deprivation},
+  author    = {Nallapareddy, Mohan Vamsi and Craighero, Francesco and Worpenberg, Lina and Naef, Felix and Gobet, C{\'e}dric and Vandergheynst, Pierre},
+  journal   = {Communications Biology},
+  volume    = {8},
+  number    = {1},
+  pages     = {1691},
+  year      = {2025},
+  month     = nov,
+  publisher = {Nature Publishing Group UK},
+  doi       = {10.1038/s42003-025-09092-7},
+  html      = {https://www.nature.com/articles/s42003-025-09092-7}
+}
+
+@inproceedings{craighero2025exploring,
+  abbr      = {ICLR WS},
+  title     = {Exploring Query-to-Reference Mapping Challenges for Automated Single-Cell Atlas-Based Diagnostics},
+  author    = {Craighero, Francesco and Maspero, Davide and Jim{\'e}nez-Gracia, Laura and Aguilar-Fern{\'a}ndez, Sergio and Boulougouri, Maria and Nieto, Juan C. and Heyn, Holger},
+  booktitle = {Learning Meaningful Representations of Life (LMRL) Workshop at ICLR 2025},
+  year      = {2025},
+  month     = mar,
+  html      = {https://openreview.net/forum?id=MGP8BbXklF},
+  abstract  = {Single-cell atlases are built by integrating multiple heterogeneous datasets into a common embedding space. The aim is reducing the dataset-specific biases or batch effects, while capturing the overall cellular composition and biological variability. One of the envisioned applications is automated diagnostics, where atlases are used as references to predict the phenotype of unseen patients. Here, we developed a diagnostic tool from a multi-disease atlas of inflammation. Moreover, we provided a benchmark of state-of-the-art integration methods for mapping and classifying unseen patients. In our tests, all the methods performed well when query batch effects are well represented in the reference, but mostly failed otherwise. Notably, linear integration approaches demonstrated superior robustness and reduced hyperparameter sensitivity compared to more powerful variational autoencoder-based methods. These findings highlight two fundamental challenges: the selection of the optimal integration method and the management of previously unobserved batch effects when classifying new query patients. As a viable solution, we designed and tested a Centralized experimental scenario where reference and query datasets are generated in the same center, demonstrating a potential pathway toward reliable atlas-based diagnostics.}
+}
+
+@inproceedings{vamsi2024graph,
+  abbr      = {MLCB},
+  award     = {Spotlight},
+  title     = {Towards improving full-length ribosome density prediction by bridging sequence and graph-based representations},
+  author    = {Nallapareddy, Mohan Vamsi and Craighero, Francesco and Gobet, C{\'e}dric and Naef, Felix and Vandergheynst, Pierre},
+  booktitle = {Proceedings of the 19th Machine Learning in Computational Biology meeting},
+  series    = {Proceedings of Machine Learning Research},
+  volume    = {261},
+  pages     = {38--52},
+  year      = {2024},
+  month     = sep,
+  editor    = {Knowles, David A. and Mostafavi, Sara},
+  publisher = {PMLR},
+  html      = {https://proceedings.mlr.press/v261/nallapareddy24a.html},
+  abstract  = {Translation elongation plays an important role in regulating protein concentrations in the cell, and dysregulation of this process has been linked to several human diseases. In this study, we use data from ribo-seq experiments to model ribosome densities, and in turn, predict the speed of translation. The proposed method, RiboGL, combines graph and recurrent neural networks to account for both graph and sequence-based features. The model takes a graph representing the secondary structure of the mRNA sequence as input, which incorporates both sequence and structural codon neighbors. In our experiments, RiboGL greatly outperforms the state-of-the-art RiboMIMO model for ribosome density prediction. We also conduct ablation studies to justify the design choices made in building the pipeline. Additionally, we use gradient-based interpretability to understand how the codon context and the structural neighbors affect the ribosome density at the A-site. By individually analyzing the genes in the dataset, we elucidate how structural neighbors could also potentially play a role in defining the ribosome density. Importantly, since these neighbors can be far away in the sequence, a recurrent model alone could not easily extract this information. This study lays the foundation for understanding how the mRNA secondary structure can be exploited for ribosome density prediction, and how in the future other graph modalities such as features from the nascent polypeptide can be used to further our understanding of translation in general.}
+}
+
+@inproceedings{salimbeni2024beyond1,
+  abbr      = {DLSP},
+  selected  = {true},
+  award     = {Best Extended Abstract Award},
+  title     = {Beyond Fine-Tuning: {LoRA} Modules Boost Near-{OOD} Detection and {LLM} Security},
+  author    = {Salimbeni, Etienne and Craighero, Francesco and Khasanova, Renata and Vasic, Milos and Vandergheynst, Pierre},
+  booktitle = {7th Deep Learning Security and Privacy Workshop (DLSP 2024)},
+  year      = {2024},
+  month     = may,
+  pdf       = {https://www.dlsp2024.ieee-security.org/papers/dls2024-final19.pdf}
+}
+
+@inproceedings{salimbeni2024beyond0,
+  abbr      = {ICLR WS},
+  title     = {Beyond Fine-Tuning: {LoRA} Modules Boost Near-{OOD} Detection and {LLM} Security},
+  author    = {Salimbeni, Etienne and Craighero, Francesco and Khasanova, Renata and Vasic, Milos and Vandergheynst, Pierre},
+  booktitle = {ICLR 2024 Workshop on Secure and Trustworthy Large Language Models},
+  year      = {2024},
+  month     = apr,
+  html      = {https://openreview.net/forum?id=H7Q5hHcvZE},
+  abstract  = {Under resource constraints, LLMs are usually fine-tuned with additional knowledge using Parameter Efficient Fine-Tuning (PEFT), using Low-Rank Adaptation (LoRA) modules. In fact, LoRA injects a new set of small trainable matrices to adapt an LLM to a new task, while keeping the latter frozen. At deployment, LoRA weights are subsequently merged with the LLM weights to speed up inference. In this work, we show how to exploit the unmerged LoRA's embedding to boost the performance of Out-Of-Distribution (OOD) detectors, especially in the more challenging near-OOD scenarios. Accordingly, we demonstrate how improving OOD detection also helps in characterizing wrong predictions in downstream tasks, a fundamental aspect to improve the reliability of LLMs. Moreover, we will present a use-case in which the sensitivity of LoRA modules and OOD detection are employed together to alert stakeholders about new model updates. This scenario is particularly important when LLMs are out-sourced. Indeed, test functions should be applied as soon as the model changes the version in order to adapt prompts in the downstream applications. In order to validate our method, we performed tests on Multiple Choice Question Answering datasets, by focusing on the medical domain as a fine-tuning task. Our results motivate the use of LoRA modules even after deployment, since they provide strong features for OOD detection for fine-tuning tasks and can be employed to improve the security of LLMs.}
+}
+
+@article{craigheroUnityStrength2023,
+  abbr      = {Neurocomputing},
+  selected  = {true},
+  title     = {Unity is strength: Improving the detection of adversarial examples with ensemble approaches},
+  author    = {Craighero, Francesco and Angaroni, Fabrizio and Stella, Fabio and Damiani, Chiara and Antoniotti, Marco and Graudenzi, Alex},
+  journal   = {Neurocomputing},
+  volume    = {554},
+  pages     = {126576},
+  year      = {2023},
+  month     = oct,
+  issn      = {0925-2312},
+  publisher = {Elsevier},
+  doi       = {10.1016/j.neucom.2023.126576},
+  abstract  = {A key challenge in computer vision and deep learning is the definition of robust strategies for the detection of adversarial examples. In this work, we propose the adoption of ensemble approaches to leverage the effectiveness of multiple detectors in exploiting distinct properties of the input data. To this end, the ENsemble Adversarial Detector (ENAD) framework integrates scoring functions from state-of-the-art detectors based on Mahalanobis distance, Local Intrinsic Dimensionality, and One-Class Support Vector Machines, which process the hidden features of deep neural networks. ENAD is designed to ensure high standardization and reproducibility to the computational workflow. Extensive tests on benchmark datasets, models and adversarial attacks show that ENAD outperforms all competing methods in the large majority of settings. The improvement over the state-of-the-art and the intrinsic generality of the framework, which allows one to easily extend ENAD to include any set of detectors and integration strategies, set the foundations for the new area of ensemble adversarial detection.}
+}
+
+@phdthesis{craigheroThreePerspectivesAnomaly2023,
+  abbr      = {PhD Thesis},
+  title     = {Three Perspectives on Anomaly Detection in Deep Learning},
+  author    = {Craighero, Francesco},
+  school    = {Universit{\`a} degli Studi di Milano-Bicocca},
+  year      = {2023},
+  month     = may,
+  html      = {https://hdl.handle.net/10281/415537}
+}
+
+@article{ascolaniLACEInteractiveTool2023,
+  abbr      = {BMC Bioinf.},
+  title     = {{LACE} 2.0: An Interactive {R} Tool for the Inference and Visualization of Longitudinal Cancer Evolution},
+  author    = {Ascolani, Gianluca and Angaroni, Fabrizio and Maspero, Davide and Craighero, Francesco and Bhavesh, Narra Lakshmi Sai and Piazza, Rocco and Damiani, Chiara and Ramazzotti, Daniele and Antoniotti, Marco and Graudenzi, Alex},
+  journal   = {BMC Bioinformatics},
+  volume    = {24},
+  number    = {1},
+  pages     = {99},
+  year      = {2023},
+  month     = mar,
+  issn      = {1471-2105},
+  doi       = {10.1186/s12859-023-05221-3}
+}
+
+@article{patrunoCombiningMultitargetRegression2021,
+  abbr      = {Inf. Comput.},
+  title     = {Combining Multi-Target Regression Deep Neural Networks and Kinetic Modeling to Predict Relative Fluxes in Reaction Systems},
+  author    = {Patruno, Lucrezia and Craighero, Francesco and Maspero, Davide and Graudenzi, Alex and Damiani, Chiara},
+  journal   = {Information and Computation},
+  volume    = {281},
+  pages     = {104798},
+  year      = {2021},
+  month     = dec,
+  issn      = {0890-5401},
+  doi       = {10.1016/j.ic.2021.104798}
+}
+
+@article{PatrunoMasperoBiB20,
+  abbr      = {Brief. Bioinf.},
+  title     = {A review of computational strategies for denoising and imputation of single-cell transcriptomic data},
+  author    = {Patruno, Lucrezia and Maspero, Davide and Craighero, Francesco and Angaroni, Fabrizio and Antoniotti, Marco and Graudenzi, Alex},
+  journal   = {Briefings in Bioinformatics},
+  volume    = {22},
+  number    = {4},
+  pages     = {bbaa222},
+  year      = {2021},
+  month     = jul,
+  issn      = {1477-4054},
+  doi       = {10.1093/bib/bbaa222}
+}
+
+@article{machicaoUseTopologicalFeatures2021,
+  abbr      = {Curr. Genomics},
+  title     = {On the Use of Topological Features of Metabolic Networks for the Classification of Cancer Samples},
+  author    = {Machicao, Jeaneth and Craighero, Francesco and Maspero, Davide and Angaroni, Fabrizio and Damiani, Chiara and Graudenzi, Alex and Antoniotti, Marco and Bruno, Odemir M.},
+  journal   = {Current Genomics},
+  volume    = {22},
+  number    = {2},
+  pages     = {88--97},
+  year      = {2021},
+  month     = feb,
+  publisher = {Bentham Science Publishers},
+  doi       = {10.2174/1389202922666210301084151}
+}
+
+@inproceedings{CraigheroAIxIA20,
+  abbr      = {XAI.it},
+  title     = {Understanding Deep Learning with Activation Pattern Diagrams},
+  author    = {Craighero, Francesco and Graudenzi, Alex and Angaroni, Fabrizio and Stella, Fabio and Antoniotti, Marco},
+  booktitle = {Proceedings of the Italian Workshop on Explainable Artificial Intelligence (XAI.it@AIxIA 2020)},
+  series    = {CEUR Workshop Proceedings},
+  volume    = {2742},
+  pages     = {119--126},
+  publisher = {CEUR-WS.org},
+  year      = {2020},
+  month     = nov,
+  pdf       = {https://ceur-ws.org/Vol-2742/short6.pdf},
+  abstract  = {The growing demand for machine learning tools to solve hard tasks, from natural language processing to image understanding, recently shifted the attention to understand and possibly to explain the behaviour of deep learning. Deep neural networks represent today the state-of-the-art in many applications that have been shown to be solved by data-driven approaches. However, they are also well known for their complexity, which hinders the interpretation of their functioning. To address this issue, researchers have lately focused either on understanding the optimization algorithms or on extracting information from a trained model; in this context we propose the Activation Pattern Diagram (APD) as a new tool to analyse neural networks by mainly focusing on the input data. The APD is a graphical representation of how a dataset is learned by a neural network with piecewise linear activation functions, such as the ReLU activation. By analysing the evolution of the diagram during the training procedure, the APD sheds light on the learning process and how data influences it. Additionally, we introduce a way to plot the APD to help the visualization and interpretation of the diagram.}
+}
+
+@inproceedings{CraigheroLOD20,
+  abbr      = {LOD},
+  title     = {Investigating the Compositional Structure of Deep Neural Networks},
+  author    = {Craighero, Francesco and Angaroni, Fabrizio and Graudenzi, Alex and Stella, Fabio and Antoniotti, Marco},
+  booktitle = {Machine Learning, Optimization, and Data Science (LOD 2020)},
+  editor    = {Nicosia, Giuseppe and Ojha, Varun and La Malfa, Emanuele and Jansen, Giorgio and Sciacca, Vincenzo and Pardalos, Panos and Giuffrida, Giovanni and Umeton, Renato},
+  pages     = {322--334},
+  year      = {2020},
+  month     = jul,
+  publisher = {Springer International Publishing},
+  isbn      = {978-3-030-64583-0},
+  doi       = {10.1007/978-3-030-64583-0_30}
+}

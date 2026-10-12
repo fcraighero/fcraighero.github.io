@@ -1,29 +1,44 @@
+# type: work | research | grad | abroad   (picks the icon)
+# current: true  -> highlighted at the top of the CV page
+- type: work
+  current: true
+  date: Present
+  title: Scientist
+  desc: >-
+    EPFL, Lausanne, CH. <a href="https://lts2.epfl.ch/">Signal Processing Laboratory 2 (LTS2)</a>
+    and <a href="https://www.epfl.ch/labs/naef-lab/">Naef Lab</a>.
+
 - type: research
-  date: 07. 2023
+  date: 07.2023
   title: Postdoctoral Researcher
-  desc: EPFL, Lausanne, CH. <a href="https://lts2.epfl.ch/" target="_blank">Signal Processing Laboratory 2 (LTS2)</a>.
+  desc: >-
+    EPFL, Lausanne, CH. <a href="https://lts2.epfl.ch/">Signal Processing Laboratory 2 (LTS2)</a>.
 
 - type: grad
-  date: 05. 2023
+  date: 05.2023
   title: PhD in Computer Science
-  desc: <a href="https://phd-computer-science.disco.unimib.it/" target="_blank">University of Milano-Bicocca</a>, Italy.
+  desc: >-
+    <a href="https://phd-computer-science.disco.unimib.it/">University of Milano-Bicocca</a>, Italy.
+    Thesis: <em>Three Perspectives on Anomaly Detection in Deep Learning</em>.
 
 - type: abroad
   date: 2022 (6 months)
-  title: Visiting at IBM Research Zurich, Switzerland
-  desc: Collaboration with the <a href="https://www.zurich.ibm.com/compsysbio/" target="_blank">computational systems biology lab</a>, supervised by Dr. María Rodríguez Martínez.
+  title: Visiting researcher, IBM Research Zurich
+  desc: >-
+    Collaboration with the <a href="https://www.zurich.ibm.com/compsysbio/">computational systems biology group</a>,
+    supervised by Dr. María Rodríguez Martínez.
 
 - type: grad
   date: 2018
-  title: Double Degree M.Sc in Computer Science
-  desc: <a href="https://www.dmif.uniud.it/en/" target="_blank">University of Udine</a>, Italy.
+  title: Double Degree M.Sc. in Computer Science
+  desc: <a href="https://www.dmif.uniud.it/en/">University of Udine</a>, Italy.
 
 - type: abroad
-  date: 2017-2018 (6 months)
-  title: Double-Degree M.Sc, Exchange Period
-  desc: <a href="https://www.aau.at/" target="_blank">Alpen-Adria-Universität Klagenfurt</a>, Austria.
+  date: 2017–2018 (6 months)
+  title: Double Degree M.Sc., exchange period
+  desc: <a href="https://www.aau.at/">Alpen-Adria-Universität Klagenfurt</a>, Austria.
 
 - type: grad
   date: 2016
-  title: B.Sc in Computer Science
-  desc: <a href="https://www.dmif.uniud.it/en/" target="_blank">University of Udine</a>, Italy.
+  title: B.Sc. in Computer Science
+  desc: <a href="https://www.dmif.uniud.it/en/">University of Udine</a>, Italy.

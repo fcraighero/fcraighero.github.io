@@ -1,3 +1,26 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="assets/main-bundle.js"></script>
+{%- comment -%}
+  Privacy hardening: the browser may only load styles and images from this
+  domain. No scripts, fonts, frames, forms or connections are allowed at all.
+{%- endcomment %}
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="color-scheme" content="light dark">
+{%- if page.url == "/" -%}
+  {%- assign page_title = site.title -%}
+{%- else -%}
+  {%- assign page_title = page.title | append: " | " | append: site.title -%}
+{%- endif %}
+{%- assign page_desc = page.description | default: site.description | strip_html | normalize_whitespace %}
+<title>{{ page_title }}</title>
+<meta name="description" content="{{ page_desc }}">
+<meta name="author" content="{{ site.title }}">
+<link rel="canonical" href="{{ page.url | absolute_url }}">
+<meta property="og:type" content="{% if page.url == '/' %}profile{% else %}website{% endif %}">
+<meta property="og:title" content="{{ page_title }}">
+<meta property="og:description" content="{{ page_desc }}">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+<meta property="og:image" content="{{ '/assets/img/prof_pic.jpg' | absolute_url }}">
+<link rel="icon" href="{{ '/assets/img/favicon.svg' | relative_url }}" type="image/svg+xml">
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">

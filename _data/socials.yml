@@ -1,0 +1,20 @@
+# Plain outbound links only — nothing is embedded or loaded from these sites.
+# `icon` must match a file in _includes/icons/.
+- name: Google Scholar
+  icon: scholar
+  url: https://scholar.google.com/citations?user=1x3b508AAAAJ
+- name: ORCID
+  icon: orcid
+  url: https://orcid.org/0000-0001-8457-6979
+- name: LinkedIn
+  icon: linkedin
+  url: https://www.linkedin.com/in/francescocraighero/
+- name: X (Twitter)
+  icon: x
+  url: https://x.com/fcraighero
+# - name: GitHub
+#   icon: github
+#   url: https://github.com/fcraighero
+# - name: Email
+#   icon: email
+#   url: mailto:name@example.org
