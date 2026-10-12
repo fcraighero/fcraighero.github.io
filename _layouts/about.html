@@ -9,10 +9,13 @@ layout: default
     {%- for w in b.widths -%}{{ b.path | append: "-" | append: w | append: ".jpg" | relative_url }} {{ w }}w{%- unless forloop.last %}, {% endunless -%}{%- endfor -%}
   {%- endcapture %}
   <header class="hero">
-    <img src="{{ b.path | append: '-' | append: w_max | append: '.jpg' | relative_url }}"
+    <img class="hero-bg" src="{{ b.path | append: '-' | append: w_max | append: '.jpg' | relative_url }}"
          srcset="{{ srcset }}" sizes="(max-width: 930px) 100vw, 900px"
          width="1400" height="538" alt="{{ b.alt }}">
     <div class="hero-text">
+      <img class="hero-face" src="{{ '/assets/img/prof_pic.jpg' | relative_url }}" width="560" height="560"
+           alt="Portrait of {{ site.first_name }} {{ site.last_name }}">
+      <div class="hero-name">
       <h1 class="post-title">{{ site.first_name }} <strong>{{ site.last_name }}</strong></h1>
       {%- assign role_parts = site.short_position | split: " · " %}
       <p class="hero-role">
@@ -20,6 +23,7 @@ layout: default
         <span>{{ part }}</span>{%- unless forloop.last %}<span class="sep" aria-hidden="true"> · </span>{% endunless -%}
         {%- endfor -%}
       </p>
+      </div>
     </div>
   </header>
   {%- else %}
@@ -30,19 +34,19 @@ layout: default
   {%- endif %}
 
   <article>
-    <div class="{% if page.banner %}intro{% else %}intro-plain{% endif %}">
-    <div class="profile{% if page.banner %} profile-small{% endif %}">
+    {%- unless page.banner %}
+    <div class="profile">
       <img src="{{ '/assets/img/prof_pic.jpg' | relative_url }}" width="560" height="560"
            alt="Portrait of {{ site.first_name }} {{ site.last_name }}">
-      {%- if site.profile_note and page.banner == nil %}
+      {%- if site.profile_note %}
       <div class="more-info">{{ site.profile_note }}</div>
       {%- endif %}
     </div>
+    {%- endunless %}
 
     <div class="clearfix bio">
       {{ content }}
       {% include social.html %}
-    </div>
     </div>
 
     {%- if site.news.size > 0 %}
