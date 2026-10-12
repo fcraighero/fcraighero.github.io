@@ -388,8 +388,8 @@ hr {
 /* Square portrait on the banner, bottom-left, next to the name */
 .hero-face {
   flex: none;
-  width: 7.5rem;
-  height: 7.5rem;
+  width: 9.75rem;
+  height: 9.75rem;
   object-fit: cover;
   object-position: 50% 25%;
   border: 2px solid rgba(255, 255, 255, 0.9);
@@ -448,8 +448,8 @@ hr {
   }
 
   .hero-face {
-    width: 4.75rem;
-    height: 4.75rem;
+    width: 6.2rem;
+    height: 6.2rem;
   }
 
   .hero .post-title {
@@ -1057,8 +1057,8 @@ ol.bibliography > li {
   }
 
   .hero-face {
-    width: 4rem;
-    height: 4rem;
+    width: 5.2rem;
+    height: 5.2rem;
   }
 }
 
