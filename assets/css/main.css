@@ -333,7 +333,7 @@ hr {
    so the overlay text uses literal white in both themes). */
 .hero {
   position: relative;
-  margin: 0 0 1.25rem;
+  margin: 0 0 2rem;
   border-radius: 6px;
   overflow: hidden;
   background: #1f2a36;
@@ -367,9 +367,6 @@ hr {
   text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
 }
 
-.desc.hero-desc {
-  margin: 0 0 2rem;
-}
 
 @media (max-width: 640px) {
   .hero img {
