@@ -482,10 +482,48 @@ hr {
   box-shadow: var(--shadow);
 }
 
+/* With a banner: portrait and bio form one block. The portrait spans exactly
+   the height of the text (top = first line, bottom = social icons), lines up
+   with the banner's right edge and shares its corners. */
+.intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 11.5rem;
+  column-gap: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.intro .bio {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.intro .bio > p:first-child {
+  margin-top: 0;
+}
+
+.intro .social {
+  margin-top: 1rem;
+}
+
 .profile-small {
-  width: 24%;
-  max-width: 200px;
-  margin-left: 1.75rem;
+  grid-column: 2;
+  grid-row: 1;
+  position: relative;
+  float: none;
+  width: auto;
+  max-width: none;
+  margin: 0;
+}
+
+.profile-small img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 20%;
+  border-radius: 6px;
+  box-shadow: none;
 }
 
 .profile .more-info {
@@ -933,11 +971,21 @@ ol.bibliography > li {
     margin: 0 auto 1.5rem;
   }
 
+  .intro {
+    display: block;
+  }
+
   .profile-small {
     float: right;
     width: 34%;
     max-width: 140px;
     margin: 0.25rem 0 0.75rem 1rem;
+  }
+
+  .profile-small img {
+    position: static;
+    height: auto;
+    aspect-ratio: 1 / 1;
   }
 
   .site-header {

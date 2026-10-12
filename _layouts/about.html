@@ -30,6 +30,7 @@ layout: default
   {%- endif %}
 
   <article>
+    <div class="{% if page.banner %}intro{% else %}intro-plain{% endif %}">
     <div class="profile{% if page.banner %} profile-small{% endif %}">
       <img src="{{ '/assets/img/prof_pic.jpg' | relative_url }}" width="560" height="560"
            alt="Portrait of {{ site.first_name }} {{ site.last_name }}">
@@ -41,6 +42,7 @@ layout: default
     <div class="clearfix bio">
       {{ content }}
       {% include social.html %}
+    </div>
     </div>
 
     {%- if site.news.size > 0 %}
