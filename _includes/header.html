@@ -2,7 +2,7 @@
 <header class="site-header">
   <nav class="navbar container" aria-label="Main">
     <a class="navbar-brand" href="{{ '/' | relative_url }}">
-      {%- if page.url != "/" -%}<strong>{{ site.first_name }}</strong> {{ site.last_name }}{%- endif -%}
+      {%- if page.url != "/" -%}{{ site.first_name }} <strong>{{ site.last_name }}</strong>{%- endif -%}
     </a>
     <div class="nav-right">
     <ul class="nav-links">
