@@ -18,7 +18,5 @@ at [CNAG](https://www.cnag.eu/), Barcelona, working on interpretable machine lea
 Before joining CNAG, I was at [EPFL](https://www.epfl.ch/), working with the
 [Signal Processing Laboratory 2 (LTS2)](https://lts2.epfl.ch/) and the
 [Naef Lab](https://www.epfl.ch/labs/naef-lab/). I obtained my PhD in Computer Science at the
-[University of Milano-Bicocca](https://www.unimib.it/), with a thesis on anomaly detection
-in deep learning, covering the interpretability of activation patterns, adversarial example
-detection and out-of-distribution detection. During my PhD, I spent six months as a visiting
+[University of Milano-Bicocca](https://www.unimib.it/). During my PhD, I spent six months as a visiting
 researcher at IBM Research Zurich.
