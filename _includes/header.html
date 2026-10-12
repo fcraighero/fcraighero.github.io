@@ -1,15 +1,20 @@
 <a class="skip-link" href="#content">Skip to content</a>
 <header class="site-header">
   <nav class="navbar container" aria-label="Main">
-    <a class="navbar-brand" href="{{ '/' | relative_url }}">
-      {%- if page.url != "/" -%}{{ site.first_name }} <strong>{{ site.last_name }}</strong>{%- endif -%}
-    </a>
+    {%- if page.url != "/" %}
+    <a class="navbar-brand" href="{{ '/' | relative_url }}">{{ site.first_name }} <strong>{{ site.last_name }}</strong></a>
+    {%- else %}
+    <span class="navbar-brand" aria-hidden="true"></span>
+    {%- endif %}
     <div class="nav-right">
     <ul class="nav-links">
       <li><a href="{{ '/' | relative_url }}"{% if page.url == "/" %} aria-current="page"{% endif %}>about</a></li>
       {%- assign nav_pages = site.pages | where: "nav", true | sort: "nav_order" %}
       {%- for p in nav_pages %}
-      <li><a href="{{ p.url | relative_url }}"{% if page.url == p.url %} aria-current="page"{% endif %}>{{ p.title }}</a></li>
+      {%- assign is_current = false %}
+      {%- if page.url == p.url %}{% assign is_current = true %}{% endif %}
+      {%- if p.url == "/news/" and page.collection == "news" %}{% assign is_current = true %}{% endif %}
+      <li><a href="{{ p.url | relative_url }}"{% if is_current %} aria-current="page"{% endif %}>{{ p.title }}</a></li>
       {%- endfor %}
     </ul>
     <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch colour theme" hidden>

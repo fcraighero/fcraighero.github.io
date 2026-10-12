@@ -14,7 +14,12 @@ layout: default
          width="1400" height="538" alt="{{ b.alt }}">
     <div class="hero-text">
       <h1 class="post-title">{{ site.first_name }} <strong>{{ site.last_name }}</strong></h1>
-      <p class="hero-role">{{ site.short_position }}</p>
+      {%- assign role_parts = site.short_position | split: " · " %}
+      <p class="hero-role">
+        {%- for part in role_parts -%}
+        <span>{{ part }}</span>{%- unless forloop.last %}<span class="sep" aria-hidden="true"> · </span>{% endunless -%}
+        {%- endfor -%}
+      </p>
     </div>
   </header>
   {%- else %}
@@ -25,16 +30,17 @@ layout: default
   {%- endif %}
 
   <article>
-    <div class="profile">
+    <div class="profile{% if page.banner %} profile-small{% endif %}">
       <img src="{{ '/assets/img/prof_pic.jpg' | relative_url }}" width="560" height="560"
            alt="Portrait of {{ site.first_name }} {{ site.last_name }}">
-      {%- if site.profile_note %}
+      {%- if site.profile_note and page.banner == nil %}
       <div class="more-info">{{ site.profile_note }}</div>
       {%- endif %}
     </div>
 
-    <div class="clearfix">
+    <div class="clearfix bio">
       {{ content }}
+      {% include social.html %}
     </div>
 
     {%- if site.news.size > 0 %}
@@ -43,7 +49,7 @@ layout: default
     {% include news.html limit=site.news_limit %}
     {%- if n_archived > 0 %}
     <details class="news-archive">
-      <summary>Archived news ({{ n_archived }})</summary>
+      <summary>archive ({{ n_archived }})</summary>
       {% include news.html offset=site.news_limit %}
     </details>
     {%- endif %}
@@ -52,6 +58,5 @@ layout: default
     <h2 class="section-title"><a href="{{ '/publications/' | relative_url }}">selected publications</a></h2>
     {% bibliography --group_by none --query @*[selected=true] %}
 
-    {% include social.html %}
   </article>
 </div>

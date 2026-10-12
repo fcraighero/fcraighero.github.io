@@ -2,7 +2,7 @@
 # Site settings
 # -----------------------------------------------------------------------------
 # A deliberately minimal, al-folio-inspired academic site.
-# Privacy by design: no analytics, no cookies, no CDNs, no embeds. The Inter font is self-hosted.
+# Privacy by design: no analytics, no cookies, no CDNs, no embeds. Fonts (Inter, Fraunces) are self-hosted.
 # Every asset is served from this domain. The only JavaScript is the optional
 # light/dark toggle (assets/js/theme.js); the site works fully without it.
 

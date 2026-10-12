@@ -6,8 +6,9 @@ Personal academic website, built with [Jekyll](https://jekyllrb.com/) and
 
 ## Privacy by design
 
-- No cookies, analytics, embeds or CDNs. The [Inter](https://rsms.me/inter/) font is self-hosted
-  in `assets/fonts/` (latin + latin-ext subsets, variable weight and optical size).
+- No cookies, analytics, embeds or CDNs. Fonts are self-hosted in `assets/fonts/`:
+  [Inter](https://rsms.me/inter/) for text and [Fraunces](https://github.com/undercasetype/Fraunces)
+  for the name and page titles (variable weight + optical size, latin subsets).
 - The only JavaScript is `assets/js/theme.js` (optional light/dark button). It stores a
   preference in `localStorage` only after a click, and only when it differs from the OS
   setting. Without JS the button is hidden and the site follows the OS.
@@ -62,6 +63,7 @@ grep -rEn '<iframe|src="https?://|url\(https?:' _site || echo "clean"
 ## Licenses
 
 Code: MIT (see `LICENSE`). Font: [Inter](https://rsms.me/inter/) by Rasmus Andersson
-(SIL OFL 1.1, `assets/fonts/LICENSE-Inter.txt`). Icons: [Font Awesome Free](https://fontawesome.com/license/free)
+(SIL OFL 1.1, `assets/fonts/LICENSE-Inter.txt`) and Fraunces by Undercase Type (SIL OFL 1.1,
+`assets/fonts/LICENSE-Fraunces.txt`). Icons: [Font Awesome Free](https://fontawesome.com/license/free)
 (CC BY 4.0) and [Academicons](https://github.com/jpswalsh/academicons) (SIL OFL 1.1);
 attribution is kept inside each SVG in `_includes/icons/`.

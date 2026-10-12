@@ -3,27 +3,24 @@
 {%- comment -%}
   Rendered by jekyll-scholar once per BibTeX entry.
   Toggles (abstract, BibTeX, long author lists) are pure CSS: a visually
-  hidden checkbox sits before the panel it controls. No JavaScript.
+  hidden checkbox sits right before its label (so keyboard order matches the
+  screen) and .pub-body:has(...) reveals the panel. No JavaScript.
 {%- endcomment -%}
 {%- assign uid = entry.key | slugify -%}
 {%- assign limit = site.max_author_limit | default: 6 -%}
 {%- assign n_authors = entry.author_array | size -%}
 {%- assign limit_plus = limit | plus: 1 -%}
+{%- assign plain_title = entry.title | strip_html | escape -%}
 <div class="pub" id="{{ uid }}">
   <div class="pub-abbr">
     {%- if entry.abbr %}<abbr class="badge" title="{{ entry.journal | default: entry.booktitle | default: entry.school }}">{{ entry.abbr }}</abbr>{% endif -%}
   </div>
   <div class="pub-body">
-    {%- if entry.abstract %}
-    <input type="checkbox" class="toggle toggle-abs" id="abs-{{ uid }}" aria-label="Show abstract">
-    {%- endif %}
-    <input type="checkbox" class="toggle toggle-bib" id="bib-{{ uid }}" aria-label="Show BibTeX">
-
-    <div class="title">{{ entry.title }}</div>
+    <h3 class="title">{{ entry.title }}</h3>
 
     <div class="author">
       {%- if n_authors > limit %}
-      <input type="checkbox" class="toggle toggle-authors" id="authors-{{ uid }}" aria-label="Show all authors">
+      <input type="checkbox" class="toggle toggle-authors" id="authors-{{ uid }}" aria-label="Show all authors of: {{ plain_title }}">
       {%- endif -%}
       {%- for author in entry.author_array -%}
         {%- capture name -%}{{ author.first }} {% if author.von %}{{ author.von }} {% endif %}{{ author.last }}{%- endcapture -%}
@@ -31,6 +28,8 @@
         {%- capture sep -%}
           {%- if forloop.last -%}{%- elsif forloop.rindex == 2 -%}{%- if n_authors > 2 -%},{%- endif %} and {% else -%}, {% endif -%}
         {%- endcapture -%}
+        {%- comment -%} The last visible author of a collapsed list gets no separator: it moves into .more-authors. {%- endcomment -%}
+        {%- if n_authors > limit and forloop.index == limit -%}{%- assign sep = "" -%}{%- endif -%}
         {%- capture rendered -%}
           {%- if site.scholar_last_name contains author.last -%}<span class="me">{{ name }}</span>{%- else -%}{{ name }}{%- endif -%}{{ sep }}
         {%- endcapture -%}
@@ -39,7 +38,7 @@
         {%- else -%}
           {%- if forloop.index == limit_plus -%}
             {%- assign more = n_authors | minus: limit -%}
-            <label class="more-authors-label" for="authors-{{ uid }}">and {{ more }} more authors</label><span class="more-authors">
+            <label class="more-authors-label" for="authors-{{ uid }}" aria-hidden="true"> and {{ more }} more authors</label><span class="more-authors">,&#32;
           {%- endif -%}
           {{ rendered }}
           {%- if forloop.last %}</span>{% endif -%}
@@ -62,7 +61,8 @@
 
     <div class="links">
       {%- if entry.abstract %}
-      <label class="btn btn-abs" for="abs-{{ uid }}">Abs</label>
+      <input type="checkbox" class="toggle toggle-abs" id="abs-{{ uid }}" aria-label="Show abstract of: {{ plain_title }}">
+      <label class="btn btn-abs" for="abs-{{ uid }}" aria-hidden="true">Abs</label>
       {%- endif %}
       {%- if entry.html %}
       <a class="btn" href="{{ entry.html }}" rel="noopener noreferrer">HTML</a>
@@ -74,7 +74,8 @@
       {%- if entry.doi %}
       <a class="btn" href="https://doi.org/{{ entry.doi }}" rel="noopener noreferrer">DOI</a>
       {%- endif %}
-      <label class="btn btn-bib" for="bib-{{ uid }}">Bib</label>
+      <input type="checkbox" class="toggle toggle-bib" id="bib-{{ uid }}" aria-label="Show BibTeX of: {{ plain_title }}">
+      <label class="btn btn-bib" for="bib-{{ uid }}" aria-hidden="true">Bib</label>
     </div>
 
     {%- if entry.abstract %}
