@@ -14,15 +14,14 @@ description: Francesco Craighero — Senior Computational Biologist at CNAG (Bar
 I am a Senior Computational Biologist in the
 [Single Cell Genomics Group](https://www.cnag.eu/teams/genome-research-unit/single-cell-genomics-group)
 led by Holger Heyn at [CNAG](https://www.cnag.eu/) in Barcelona.
-I develop machine learning methods for single-cell and molecular biology.
-My main focus is single-cell atlases of inflammation: integrating millions of immune cells
-across diseases into a common reference, and using that reference to classify new patients,
-where batch effects and query-to-reference mapping remain open problems.
-I also build interpretable deep learning models of mRNA translation that predict ribosome
-footprints from sequence and structure and reveal what drives translation elongation, and
-I study how to distil biological foundation models into smaller, efficient supervised models.
-Throughout, I draw on my background in anomaly and out-of-distribution detection to make
-these models more reliable and interpretable.
+My research focuses on machine learning and interpretability in computational biology:
+building models that predict well and also reveal which biological signals drive their
+predictions. In single-cell genomics, I work on atlases of inflammation and on classifying
+new patients against them. In mRNA translation, I use interpretable deep learning models of
+ribosome footprints to uncover the sequence and structural determinants of elongation.
+I also study how to distil biological foundation models into smaller supervised models that
+are easier to inspect. My background in anomaly and out-of-distribution detection shapes how
+I evaluate when these models can be trusted.
 
 Before joining CNAG, I was at [EPFL](https://www.epfl.ch/), working with the
 [Signal Processing Laboratory 2 (LTS2)](https://lts2.epfl.ch/) and the
