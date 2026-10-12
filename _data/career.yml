@@ -3,16 +3,18 @@
 - type: work
   current: true
   date: Present
-  title: Scientist
+  title: Senior Computational Biologist
   desc: >-
-    EPFL, Lausanne, CH. <a href="https://lts2.epfl.ch/">Signal Processing Laboratory 2 (LTS2)</a>
-    and <a href="https://www.epfl.ch/labs/naef-lab/">Naef Lab</a>.
+    <a href="https://www.cnag.eu/">CNAG</a>, Barcelona, ES.
+    <a href="https://www.cnag.eu/teams/genome-research-unit/single-cell-genomics-group">Single Cell Genomics Group</a>
+    (Holger Heyn), Genome Research Unit.
 
 - type: research
   date: 07.2023
-  title: Postdoctoral Researcher
+  title: Postdoctoral Researcher, then Scientist
   desc: >-
-    EPFL, Lausanne, CH. <a href="https://lts2.epfl.ch/">Signal Processing Laboratory 2 (LTS2)</a>.
+    EPFL, Lausanne, CH. <a href="https://lts2.epfl.ch/">Signal Processing Laboratory 2 (LTS2)</a>
+    and <a href="https://www.epfl.ch/labs/naef-lab/">Naef Lab</a>.
 
 - type: grad
   date: 05.2023

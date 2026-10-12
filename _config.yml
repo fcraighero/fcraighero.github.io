@@ -9,18 +9,18 @@ first_name: Francesco
 last_name: Craighero
 title: Francesco Craighero
 position: >-
-  Scientist at <a href="https://www.epfl.ch/">EPFL</a>, working with the
-  <a href="https://lts2.epfl.ch/">Signal Processing Laboratory 2 (LTS2)</a> and the
-  <a href="https://www.epfl.ch/labs/naef-lab/">Naef Lab</a>
+  Senior Computational Biologist in the
+  <a href="https://www.cnag.eu/teams/genome-research-unit/single-cell-genomics-group">Single Cell Genomics Group</a>
+  at <a href="https://www.cnag.eu/">CNAG</a>, Barcelona
 description: >-
-  Francesco Craighero — scientist at EPFL working on machine learning for
-  biology, anomaly detection and interpretability.
+  Francesco Craighero — Senior Computational Biologist at CNAG (Barcelona),
+  working on machine learning for single-cell genomics.
 lang: en
 url: "https://fcraighero.github.io"
 baseurl: ""
 
 # Short note shown under the profile picture on the about page
-profile_note: EPFL, Lausanne, Switzerland
+profile_note: CNAG, Barcelona, Spain
 
 # Contact note shown under the social icons
 contact_note: ""
