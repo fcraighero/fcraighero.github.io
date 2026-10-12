@@ -385,16 +385,14 @@ hr {
   isolation: isolate;
 }
 
-/* Shade only behind the name: dark at the bottom-left, fading upwards and
-   towards the right so most of the photo stays bright. */
+/* A light, even shade along the bottom of the banner (same across its full
+   width), just strong enough for the name to stay readable. */
 .hero-text::before {
   content: "";
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: linear-gradient(to top, rgba(10, 18, 30, 0.85), rgba(10, 18, 30, 0.55) 45%, rgba(10, 18, 30, 0));
-  -webkit-mask-image: linear-gradient(to right, #000 70%, transparent);
-  mask-image: linear-gradient(to right, #000 70%, transparent);
+  background: linear-gradient(to top, rgba(10, 18, 30, 0.7), rgba(10, 18, 30, 0.35) 50%, rgba(10, 18, 30, 0));
 }
 
 /* Square portrait on the banner, bottom-left, next to the name */
@@ -459,11 +457,9 @@ hr {
     padding: 3rem 1rem 0.9rem;
   }
 
-  /* On phones the name sits over the bright sky: keep a full-width shade. */
+  /* On phones the name sits over the bright sky: use a stronger shade. */
   .hero-text::before {
     background: linear-gradient(to top, rgba(10, 18, 30, 0.9), rgba(10, 18, 30, 0.6) 60%, rgba(10, 18, 30, 0));
-    -webkit-mask-image: none;
-    mask-image: none;
   }
 
   .hero-face {
@@ -531,10 +527,6 @@ hr {
   color: var(--muted);
   font-size: 0.85rem;
   line-height: 1.4;
-}
-
-.bio > p {
-  max-width: 68ch;
 }
 
 .clearfix::after {
@@ -1051,15 +1043,6 @@ ol.bibliography > li {
 
   .cv .cv-body {
     grid-column: 2;
-  }
-}
-
-/* Narrow tablets: the name covers most of the banner width, so shade it all. */
-@media (min-width: 641px) and (max-width: 760px) {
-  .hero-text::before {
-    background: linear-gradient(to top, rgba(10, 18, 30, 0.85), rgba(10, 18, 30, 0.55) 50%, rgba(10, 18, 30, 0));
-    -webkit-mask-image: none;
-    mask-image: none;
   }
 }
 
