@@ -1,6 +1,11 @@
+---
+# Processed by Jekyll (Liquid only) so venue badge colours can be generated
+# from _data/venues.yml without inline styles.
+---
 /* ==========================================================================
    Minimal al-folio-inspired stylesheet.
-   No web fonts, no frameworks, no JavaScript. Dark mode follows the OS.
+   No web fonts, no frameworks. Dark mode follows the OS unless the visitor
+   picks a theme with the optional toggle (which sets data-theme on <html>).
    ========================================================================== */
 
 :root {
@@ -8,6 +13,7 @@
   --text: #1a1a1a;
   --muted: #6b6b6b;
   --divider: #dcdcdc;
+  --year: #d0d0d0;
   --theme: #4a6283;
   --theme-contrast: #ffffff;
   --code-bg: #f4f5f7;
@@ -19,21 +25,39 @@
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono",
     monospace;
 
-  color-scheme: light dark;
+  color-scheme: light;
 }
 
+/* Dark palette: applied when the OS is dark (unless the visitor chose light),
+   or when the visitor chose dark. Keep both blocks in sync. */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --bg: #1c1c1d;
     --text: #e6e6e6;
     --muted: #9a9a9a;
     --divider: #3a3a3c;
+    --year: #5a5a5d;
     --theme: #9db4d3;
     --theme-contrast: #1c1c1d;
     --code-bg: #2a2a2c;
     --header-bg: rgba(28, 28, 29, 0.92);
     --shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    color-scheme: dark;
   }
+}
+
+:root[data-theme="dark"] {
+  --bg: #1c1c1d;
+  --text: #e6e6e6;
+  --muted: #9a9a9a;
+  --divider: #3a3a3c;
+  --year: #5a5a5d;
+  --theme: #9db4d3;
+  --theme-contrast: #1c1c1d;
+  --code-bg: #2a2a2c;
+  --header-bg: rgba(28, 28, 29, 0.92);
+  --shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  color-scheme: dark;
 }
 
 /* ---- Base --------------------------------------------------------------- */
@@ -179,7 +203,7 @@ hr {
   display: flex;
   flex-wrap: wrap;
   gap: 0 1.25rem;
-  margin: 0 0 0 auto;
+  margin: 0;
   padding: 0;
   list-style: none;
 }
@@ -197,6 +221,60 @@ hr {
 
 .nav-links a[aria-current="page"] {
   font-weight: 600;
+}
+
+/* ---- Theme toggle (only shown when JavaScript runs) ---------------------- */
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  margin-left: 0.25rem;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--text);
+  font-size: 1.05rem;
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  color: var(--theme);
+}
+
+.theme-toggle[hidden] {
+  display: none;
+}
+
+.theme-toggle .icon-sun {
+  display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .theme-toggle .icon-sun {
+    display: inline;
+  }
+  :root:not([data-theme="light"]) .theme-toggle .icon-moon {
+    display: none;
+  }
+}
+
+:root[data-theme="dark"] .theme-toggle .icon-sun {
+  display: inline;
+}
+
+:root[data-theme="dark"] .theme-toggle .icon-moon {
+  display: none;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: auto;
 }
 
 /* ---- Page header -------------------------------------------------------- */
@@ -329,22 +407,32 @@ hr {
   margin-top: 0.75rem;
 }
 
+.news-more {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  text-align: right;
+}
+
+.news-date {
+  color: var(--muted);
+  margin: 0;
+}
+
+.back-link {
+  margin-top: 2.5rem;
+  font-size: 0.95rem;
+}
+
 /* ---- Publications ------------------------------------------------------- */
 
 h2.bibliography {
-  color: var(--divider);
+  color: var(--year);
   border-top: 1px solid var(--divider);
   font-size: 2.2rem;
   font-weight: 600;
   text-align: right;
   margin: 2rem 0 0;
   padding-top: 0.75rem;
-}
-
-@media (prefers-color-scheme: dark) {
-  h2.bibliography {
-    color: #5a5a5d;
-  }
 }
 
 ol.bibliography {
@@ -372,13 +460,19 @@ ol.bibliography > li {
   width: 100%;
   padding: 0.3rem 0.25rem;
   border-radius: 4px;
-  background: var(--theme);
-  color: var(--theme-contrast);
+  background: var(--badge-bg, var(--theme));
+  color: var(--badge-fg, var(--theme-contrast));
   font-size: 0.75rem;
   font-weight: 700;
   line-height: 1.2;
   text-align: center;
   text-decoration: none;
+}
+
+a.badge:hover,
+a.badge:focus-visible {
+  text-decoration: none;
+  filter: brightness(1.12);
 }
 
 .pub-body {
@@ -661,3 +755,8 @@ ol.bibliography > li {
     display: none;
   }
 }
+
+/* ---- Venue badge colours (generated from _data/venues.yml) -------------- */
+{% for v in site.data.venues %}
+.badge.venue-{{ v[0] | slugify }} { --badge-bg: {{ v[1].color }}; --badge-fg: #ffffff; }
+{%- endfor %}

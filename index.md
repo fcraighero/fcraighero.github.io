@@ -3,7 +3,6 @@ layout: about
 title: about
 permalink: /
 description: Francesco Craighero — Senior Computational Biologist at CNAG (Barcelona), working on machine learning for single-cell genomics.
-news_limit: 5
 ---
 
 I am a Senior Computational Biologist in the

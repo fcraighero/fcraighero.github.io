@@ -10,17 +10,27 @@ its visitors.
 
 ## What this site does not do
 
-- **No cookies** and no other browser storage (local storage, session storage, IndexedDB).
+- **No cookies.**
 - **No analytics, tracking pixels, fingerprinting or advertising.**
-- **No JavaScript** at all.
+- **No third-party scripts.** The only script is a small file from this site that powers the
+  light/dark button. It never sends anything anywhere.
 - **No third-party resources.** Fonts, icons, styles and images are all served from this
   domain. Nothing is loaded from CDNs, Google Fonts, social networks or any other external
   service, so visiting a page does not contact anyone except the server hosting this site.
 - **No embeds, forms or comment systems.**
 
 These guarantees are enforced technically: every page ships with a Content Security Policy
-that forbids the browser from running scripts or loading anything from other domains, and a
-referrer policy that prevents your browser from telling other sites that you came from here.
+that forbids the browser from loading anything from other domains, and a referrer policy that
+prevents your browser from telling other sites that you came from here.
+
+## The light/dark button
+
+By default the site follows your device's light or dark setting and stores nothing. If you
+use the button to pick the opposite theme, your browser remembers that choice locally
+(the word "light" or "dark" under the key `theme` in local storage) so the next page opens in
+the same theme. It stays on your device and is never sent to me or anyone else. Picking your
+device's theme again deletes it, and so does clearing this site's data in your browser.
+This storage only happens at your request, so it needs no consent banner.
 
 ## Hosting
 

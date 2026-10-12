@@ -20,9 +20,12 @@ layout: default
       {{ content }}
     </div>
 
-    {%- if site.data.news.size > 0 %}
-    <h2 class="section-title"><span class="accent">news</span></h2>
-    {% include news.html limit=page.news_limit %}
+    {%- if site.news.size > 0 %}
+    <h2 class="section-title"><a href="{{ '/news/' | relative_url }}">news</a></h2>
+    {% include news.html limit=site.news_limit %}
+    {%- if site.news.size > site.news_limit %}
+    <p class="news-more"><a href="{{ '/news/' | relative_url }}">All news &rarr;</a></p>
+    {%- endif %}
     {%- endif %}
 
     <h2 class="section-title"><a href="{{ '/publications/' | relative_url }}">selected publications</a></h2>

@@ -1,11 +1,21 @@
+{%- comment -%}
+  News table. include.limit = number of items to show (all if omitted).
+  Short items (inline: true) are shown in full; longer ones link to their own page.
+{%- endcomment -%}
+{%- assign items = site.news | sort: "date" | reverse -%}
+{%- if include.limit -%}{%- assign items = items | slice: 0, include.limit -%}{%- endif %}
 <table class="news-table">
   <tbody>
-    {%- assign items = site.data.news %}
-    {%- if include.limit %}{% assign items = items | slice: 0, include.limit %}{% endif %}
     {%- for item in items %}
     <tr>
-      <th scope="row">{{ item.date }}</th>
-      <td>{{ item.body }}</td>
+      <th scope="row"><time datetime="{{ item.date | date: '%Y-%m-%d' }}">{{ item.date | date: "%b %Y" }}</time></th>
+      <td>
+        {%- if item.inline -%}
+        {{ item.content | remove: '<p>' | remove: '</p>' | strip }}
+        {%- else -%}
+        <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+        {%- endif -%}
+      </td>
     </tr>
     {%- endfor %}
   </tbody>

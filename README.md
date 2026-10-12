@@ -6,9 +6,12 @@ Personal academic website, built with [Jekyll](https://jekyllrb.com/) and
 
 ## Privacy by design
 
-- No JavaScript, cookies, analytics, embeds, web fonts or CDNs.
+- No cookies, analytics, embeds, web fonts or CDNs.
+- The only JavaScript is `assets/js/theme.js` (optional light/dark button). It stores a
+  preference in `localStorage` only after a click, and only when it differs from the OS
+  setting. Without JS the button is hidden and the site follows the OS.
 - Every asset (CSS, icons, image) is served from this domain; icons are inlined SVG.
-- Each page sets a Content-Security-Policy (`default-src 'none'; style-src 'self'; img-src 'self'`)
+- Each page sets a Content-Security-Policy (`default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'`)
   and `referrer: no-referrer`, so the browser itself refuses to load anything else.
 - Images are resized and stripped of EXIF metadata.
 - Abstract/BibTeX/author toggles are pure CSS (hidden checkboxes).
@@ -20,7 +23,8 @@ Personal academic website, built with [Jekyll](https://jekyllrb.com/) and
 | Bio                     | `index.md`                     |
 | Name, position, etc.    | `_config.yml`                  |
 | Publications            | `_bibliography/papers.bib`     |
-| News                    | `_data/news.yml`               |
+| News                    | `_news/*.md` (see below)       |
+| Venue badge colours     | `_data/venues.yml`             |
 | CV / career             | `_data/career.yml`             |
 | Social links            | `_data/socials.yml`            |
 | Privacy notice          | `_pages/privacy.md`            |
@@ -29,6 +33,11 @@ Personal academic website, built with [Jekyll](https://jekyllrb.com/) and
 Extra BibTeX fields understood by the site (hidden from the public BibTeX):
 `abbr` (venue badge), `selected = {true}` (show on home page), `html`, `pdf`
 (URL or file name in `assets/pdf/`), `award`, `abstract`.
+
+News items are files in `_news/` with a `date`. Short ones use `inline: true` and appear in
+full in the news table; longer ones use `inline: false` plus a `title` and get their own page
+under `/news/`. The home page shows the latest `news_limit` items (set in `_config.yml`);
+`/news/` lists all of them.
 
 To replace the photo while stripping metadata:
 
@@ -47,7 +56,7 @@ rake commit_deploy            # build, commit, and publish _site/ to the master 
 Before deploying, check that nothing external sneaked in:
 
 ```sh
-grep -rEn '<script|<iframe|src="https?://|url\(https?:' _site || echo "clean"
+grep -rEn '<iframe|src="https?://|url\(https?:' _site || echo "clean"
 ```
 
 ## Licenses

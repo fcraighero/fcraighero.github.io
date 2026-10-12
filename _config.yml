@@ -2,8 +2,9 @@
 # Site settings
 # -----------------------------------------------------------------------------
 # A deliberately minimal, al-folio-inspired academic site.
-# Privacy by design: no analytics, no cookies, no JavaScript, no CDNs,
-# no web fonts, no embeds. Every asset is served from this domain.
+# Privacy by design: no analytics, no cookies, no CDNs, no web fonts, no embeds.
+# Every asset is served from this domain. The only JavaScript is the optional
+# light/dark toggle (assets/js/theme.js); the site works fully without it.
 
 first_name: Francesco
 last_name: Craighero
@@ -28,6 +29,9 @@ contact_note: ""
 # Last name to highlight in author lists
 scholar_last_name: [Craighero]
 
+# Number of news items on the home page (all of them are on /news/)
+news_limit: 5
+
 # Max authors shown before collapsing the rest into "and N more"
 max_author_limit: 6
 
@@ -45,6 +49,18 @@ exclude:
   - LICENSE
   - vendor
   - .bundle
+
+collections:
+  news:
+    output: true
+    permalink: /news/:year/:slug/
+
+defaults:
+  - scope:
+      path: ""
+      type: news
+    values:
+      layout: news
 
 plugins:
   - jekyll/scholar
