@@ -21,10 +21,14 @@ layout: default
     </div>
 
     {%- if site.news.size > 0 %}
+    {%- assign n_archived = site.news.size | minus: site.news_limit %}
     <h2 class="section-title"><a href="{{ '/news/' | relative_url }}">news</a></h2>
     {% include news.html limit=site.news_limit %}
-    {%- if site.news.size > site.news_limit %}
-    <p class="news-more"><a href="{{ '/news/' | relative_url }}">All news &rarr;</a></p>
+    {%- if n_archived > 0 %}
+    <details class="news-archive">
+      <summary>Archived news ({{ n_archived }})</summary>
+      {% include news.html offset=site.news_limit %}
+    </details>
     {%- endif %}
     {%- endif %}
 

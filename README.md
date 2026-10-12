@@ -6,12 +6,13 @@ Personal academic website, built with [Jekyll](https://jekyllrb.com/) and
 
 ## Privacy by design
 
-- No cookies, analytics, embeds, web fonts or CDNs.
+- No cookies, analytics, embeds or CDNs. The [Inter](https://rsms.me/inter/) font is self-hosted
+  in `assets/fonts/` (latin + latin-ext subsets, variable weight and optical size).
 - The only JavaScript is `assets/js/theme.js` (optional light/dark button). It stores a
   preference in `localStorage` only after a click, and only when it differs from the OS
   setting. Without JS the button is hidden and the site follows the OS.
 - Every asset (CSS, icons, image) is served from this domain; icons are inlined SVG.
-- Each page sets a Content-Security-Policy (`default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'`)
+- Each page sets a Content-Security-Policy (`default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'`)
   and `referrer: no-referrer`, so the browser itself refuses to load anything else.
 - Images are resized and stripped of EXIF metadata.
 - Abstract/BibTeX/author toggles are pure CSS (hidden checkboxes).
@@ -24,7 +25,6 @@ Personal academic website, built with [Jekyll](https://jekyllrb.com/) and
 | Name, position, etc.    | `_config.yml`                  |
 | Publications            | `_bibliography/papers.bib`     |
 | News                    | `_news/*.md` (see below)       |
-| Venue badge colours     | `_data/venues.yml`             |
 | CV / career             | `_data/career.yml`             |
 | Social links            | `_data/socials.yml`            |
 | Privacy notice          | `_pages/privacy.md`            |
@@ -36,8 +36,8 @@ Extra BibTeX fields understood by the site (hidden from the public BibTeX):
 
 News items are files in `_news/` with a `date`. Short ones use `inline: true` and appear in
 full in the news table; longer ones use `inline: false` plus a `title` and get their own page
-under `/news/`. The home page shows the latest `news_limit` items (set in `_config.yml`);
-`/news/` lists all of them.
+under `/news/`. The latest `news_limit` items (set in `_config.yml`) are "recent"; older ones
+move to an "Archived news" section, collapsed on the home page and grouped by year on `/news/`.
 
 To replace the photo while stripping metadata:
 
@@ -61,6 +61,7 @@ grep -rEn '<iframe|src="https?://|url\(https?:' _site || echo "clean"
 
 ## Licenses
 
-Code: MIT (see `LICENSE`). Icons: [Font Awesome Free](https://fontawesome.com/license/free)
+Code: MIT (see `LICENSE`). Font: [Inter](https://rsms.me/inter/) by Rasmus Andersson
+(SIL OFL 1.1, `assets/fonts/LICENSE-Inter.txt`). Icons: [Font Awesome Free](https://fontawesome.com/license/free)
 (CC BY 4.0) and [Academicons](https://github.com/jpswalsh/academicons) (SIL OFL 1.1);
 attribution is kept inside each SVG in `_includes/icons/`.

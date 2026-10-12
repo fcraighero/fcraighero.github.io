@@ -11,15 +11,7 @@
 {%- assign limit_plus = limit | plus: 1 -%}
 <div class="pub" id="{{ uid }}">
   <div class="pub-abbr">
-    {%- if entry.abbr -%}
-      {%- assign venue = site.data.venues[entry.abbr] -%}
-      {%- assign venue_name = entry.journal | default: entry.booktitle | default: entry.school -%}
-      {%- if venue.url -%}
-      <a class="badge venue-{{ entry.abbr | slugify }}" href="{{ venue.url }}" rel="noopener noreferrer" title="{{ venue_name }}">{{ entry.abbr }}</a>
-      {%- else -%}
-      <abbr class="badge venue-{{ entry.abbr | slugify }}" title="{{ venue_name }}">{{ entry.abbr }}</abbr>
-      {%- endif -%}
-    {%- endif -%}
+    {%- if entry.abbr %}<abbr class="badge" title="{{ entry.journal | default: entry.booktitle | default: entry.school }}">{{ entry.abbr }}</abbr>{% endif -%}
   </div>
   <div class="pub-body">
     {%- if entry.abstract %}

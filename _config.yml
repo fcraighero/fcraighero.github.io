@@ -2,7 +2,7 @@
 # Site settings
 # -----------------------------------------------------------------------------
 # A deliberately minimal, al-folio-inspired academic site.
-# Privacy by design: no analytics, no cookies, no CDNs, no web fonts, no embeds.
+# Privacy by design: no analytics, no cookies, no CDNs, no embeds. The Inter font is self-hosted.
 # Every asset is served from this domain. The only JavaScript is the optional
 # light/dark toggle (assets/js/theme.js); the site works fully without it.
 
@@ -29,8 +29,9 @@ contact_note: ""
 # Last name to highlight in author lists
 scholar_last_name: [Craighero]
 
-# Number of news items on the home page (all of them are on /news/)
-news_limit: 5
+# Number of recent news items. Older ones go to the "Archived news" section
+# (collapsed on the home page, grouped by year on /news/).
+news_limit: 3
 
 # Max authors shown before collapsing the rest into "and N more"
 max_author_limit: 6

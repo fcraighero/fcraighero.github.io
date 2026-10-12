@@ -1,9 +1,14 @@
 {%- comment -%}
-  News table. include.limit = number of items to show (all if omitted).
+  News table, newest first.
+    include.offset  first item to show (default 0)
+    include.limit   number of items to show (default: all)
   Short items (inline: true) are shown in full; longer ones link to their own page.
 {%- endcomment -%}
-{%- assign items = site.news | sort: "date" | reverse -%}
-{%- if include.limit -%}{%- assign items = items | slice: 0, include.limit -%}{%- endif %}
+{%- assign items = include.items | default: site.news -%}
+{%- assign items = items | sort: "date" | reverse -%}
+{%- assign offset = include.offset | default: 0 -%}
+{%- assign limit = include.limit | default: items.size -%}
+{%- assign items = items | slice: offset, limit %}
 <table class="news-table">
   <tbody>
     {%- for item in items %}

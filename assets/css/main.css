@@ -1,12 +1,56 @@
----
-# Processed by Jekyll (Liquid only) so venue badge colours can be generated
-# from _data/venues.yml without inline styles.
----
 /* ==========================================================================
    Minimal al-folio-inspired stylesheet.
-   No web fonts, no frameworks. Dark mode follows the OS unless the visitor
-   picks a theme with the optional toggle (which sets data-theme on <html>).
+   No frameworks. Dark mode follows the OS unless the visitor picks a theme
+   with the optional toggle (which sets data-theme on <html>).
    ========================================================================== */
+
+/* Inter 4 by Rasmus Andersson (https://rsms.me/inter/), SIL OFL 1.1 — see
+   assets/fonts/LICENSE-Inter.txt. Self-hosted variable font (weight + optical
+   size axes) from @fontsource-variable/inter 5.3.0. The latin-ext files are
+   only downloaded when a page uses one of their characters. */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("../fonts/inter-latin-opsz-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("../fonts/inter-latin-opsz-italic.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("../fonts/inter-latin-ext-opsz-normal.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
+    U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
+    U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("../fonts/inter-latin-ext-opsz-italic.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
+    U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
+    U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
 
 :root {
   --bg: #ffffff;
@@ -20,7 +64,7 @@
   --header-bg: rgba(255, 255, 255, 0.92);
   --shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
 
-  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
     Arial, "Noto Sans", "Liberation Sans", sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono",
     monospace;
@@ -78,6 +122,7 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--font-sans);
+  font-feature-settings: "liga" 1, "calt" 1;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.6;
@@ -407,10 +452,48 @@ hr {
   margin-top: 0.75rem;
 }
 
-.news-more {
-  margin-top: 0.5rem;
+.news-table th time {
+  font-variant-numeric: tabular-nums;
+}
+
+.news-archive {
+  margin-top: 0.75rem;
+  border-top: 1px solid var(--divider);
+  padding-top: 0.5rem;
+}
+
+.news-archive > summary {
+  color: var(--theme);
+  cursor: pointer;
   font-size: 0.95rem;
-  text-align: right;
+  padding: 0.25rem 0;
+}
+
+.news-archive > summary:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.news-archive[open] > summary {
+  margin-bottom: 0.25rem;
+}
+
+.news-archive .news-table td,
+.news-archive .news-table th {
+  color: var(--muted);
+}
+
+.prose .news-archive-title {
+  margin-top: 2.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--divider);
+}
+
+.prose .news-year {
+  color: var(--muted);
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 1.25rem 0 0.25rem;
 }
 
 .news-date {
@@ -460,19 +543,13 @@ ol.bibliography > li {
   width: 100%;
   padding: 0.3rem 0.25rem;
   border-radius: 4px;
-  background: var(--badge-bg, var(--theme));
-  color: var(--badge-fg, var(--theme-contrast));
+  background: var(--theme);
+  color: var(--theme-contrast);
   font-size: 0.75rem;
   font-weight: 700;
   line-height: 1.2;
   text-align: center;
   text-decoration: none;
-}
-
-a.badge:hover,
-a.badge:focus-visible {
-  text-decoration: none;
-  filter: brightness(1.12);
 }
 
 .pub-body {
@@ -617,7 +694,7 @@ a.badge:focus-visible {
 
 .cv > li {
   display: grid;
-  grid-template-columns: 2rem 9rem 1fr;
+  grid-template-columns: 2rem 7.5rem 1fr;
   gap: 0 1rem;
   padding: 1rem 0;
   border-top: 1px solid var(--divider);
@@ -636,6 +713,8 @@ a.badge:focus-visible {
 .cv .cv-date {
   color: var(--muted);
   font-size: 0.95rem;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
   padding-top: 0.1rem;
 }
 
@@ -755,8 +834,3 @@ a.badge:focus-visible {
     display: none;
   }
 }
-
-/* ---- Venue badge colours (generated from _data/venues.yml) -------------- */
-{% for v in site.data.venues %}
-.badge.venue-{{ v[0] | slugify }} { --badge-bg: {{ v[1].color }}; --badge-fg: #ffffff; }
-{%- endfor %}

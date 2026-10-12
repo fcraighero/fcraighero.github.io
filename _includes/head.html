@@ -1,11 +1,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 {%- comment -%}
-  Privacy hardening: the browser may only load styles, images and the one
-  theme-toggle script from this domain. No inline scripts, fonts, frames,
+  Privacy hardening: the browser may only load styles, images, fonts and the
+  one theme-toggle script from this domain. No inline scripts, fonts, frames,
   forms or connections to other sites are allowed.
 {%- endcomment %}
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <meta name="color-scheme" content="light dark">
 {%- if page.url == "/" -%}

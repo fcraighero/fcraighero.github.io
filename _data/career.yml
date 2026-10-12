@@ -1,46 +1,48 @@
+# Dates use one format: "YYYY – YYYY" for positions and stays, "YYYY" for degrees.
 # type: work | research | grad | abroad   (picks the icon)
-# current: true  -> highlighted at the top of the CV page
+# current: true  -> listed first, with a "current" tag
 - type: work
   current: true
-  date: Present
+  date: 2026 – now
   title: Senior Computational Biologist
   desc: >-
-    <a href="https://www.cnag.eu/">CNAG</a>, Barcelona, ES.
+    <a href="https://www.cnag.eu/">CNAG</a>, Barcelona, Spain.
     <a href="https://www.cnag.eu/teams/genome-research-unit/single-cell-genomics-group">Single Cell Genomics Group</a>
     (Holger Heyn), Genome Research Unit.
 
 - type: research
-  date: 07.2023
+  date: 2023 – 2026
   title: Postdoctoral Researcher, then Scientist
   desc: >-
-    EPFL, Lausanne, CH. <a href="https://lts2.epfl.ch/">Signal Processing Laboratory 2 (LTS2)</a>
+    EPFL, Lausanne, Switzerland. <a href="https://lts2.epfl.ch/">Signal Processing Laboratory 2 (LTS2)</a>
     and <a href="https://www.epfl.ch/labs/naef-lab/">Naef Lab</a>.
 
 - type: grad
-  date: 05.2023
+  date: "2023"
   title: PhD in Computer Science
   desc: >-
     <a href="https://phd-computer-science.disco.unimib.it/">University of Milano-Bicocca</a>, Italy.
     Thesis: <em>Three Perspectives on Anomaly Detection in Deep Learning</em>.
 
 - type: abroad
-  date: 2022 (6 months)
-  title: Visiting researcher, IBM Research Zurich
+  date: "2022"
+  title: Visiting Researcher, IBM Research Zurich
   desc: >-
-    Collaboration with the <a href="https://www.zurich.ibm.com/compsysbio/">computational systems biology group</a>,
+    Six-month visit to the <a href="https://www.zurich.ibm.com/compsysbio/">computational systems biology group</a>,
     supervised by Dr. María Rodríguez Martínez.
 
 - type: grad
-  date: 2018
+  date: "2018"
   title: Double Degree M.Sc. in Computer Science
   desc: <a href="https://www.dmif.uniud.it/en/">University of Udine</a>, Italy.
 
 - type: abroad
-  date: 2017–2018 (6 months)
-  title: Double Degree M.Sc., exchange period
-  desc: <a href="https://www.aau.at/">Alpen-Adria-Universität Klagenfurt</a>, Austria.
+  date: 2017 – 2018
+  title: Exchange Student, Double Degree M.Sc.
+  desc: >-
+    Six-month exchange at <a href="https://www.aau.at/">Alpen-Adria-Universität Klagenfurt</a>, Austria.
 
 - type: grad
-  date: 2016
+  date: "2016"
   title: B.Sc. in Computer Science
   desc: <a href="https://www.dmif.uniud.it/en/">University of Udine</a>, Italy.
