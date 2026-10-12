@@ -329,26 +329,63 @@ hr {
   padding-bottom: 3rem;
 }
 
-.banner {
-  margin: 0 0 2rem;
+/* Home-page banner with the name over a dark fade (photo colours are fixed,
+   so the overlay text uses literal white in both themes). */
+.hero {
+  position: relative;
+  margin: 0 0 1.25rem;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #1f2a36;
 }
 
-.banner img {
+.hero img {
   display: block;
   width: 100%;
   height: auto;
   aspect-ratio: 1400 / 538;
   object-fit: cover;
-  border-radius: 6px;
+}
+
+.hero-text {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 4rem 1.5rem 1.25rem;
+  color: #ffffff;
+  background: linear-gradient(to top, rgba(10, 18, 30, 0.85), rgba(10, 18, 30, 0.45) 55%, rgba(10, 18, 30, 0));
+}
+
+.hero .post-title {
+  margin: 0;
+  color: #ffffff;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
+}
+
+.hero-role {
+  margin: 0.25rem 0 0;
+  font-size: 1.1rem;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
+}
+
+.desc.hero-desc {
+  margin: 0 0 2rem;
 }
 
 @media (max-width: 640px) {
-  .banner {
-    margin-bottom: 1.25rem;
+  .hero img {
+    aspect-ratio: 16 / 10;
   }
 
-  .banner img {
-    aspect-ratio: 2 / 1;
+  .hero-text {
+    padding: 3rem 1rem 0.9rem;
+  }
+
+  .hero .post-title {
+    font-size: 1.9rem;
+  }
+
+  .hero-role {
+    font-size: 0.98rem;
   }
 }
 
