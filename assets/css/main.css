@@ -329,6 +329,29 @@ hr {
   padding-bottom: 3rem;
 }
 
+.banner {
+  margin: 0 0 2rem;
+}
+
+.banner img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1400 / 538;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+@media (max-width: 640px) {
+  .banner {
+    margin-bottom: 1.25rem;
+  }
+
+  .banner img {
+    aspect-ratio: 2 / 1;
+  }
+}
+
 .post-header {
   margin-bottom: 2rem;
 }
