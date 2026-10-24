@@ -14,7 +14,7 @@ its visitors.
 - **No analytics, tracking pixels, fingerprinting or advertising.**
 - **No third-party scripts.** The only script is a small file from this site that powers the
   light/dark button. It never sends anything anywhere.
-- **No third-party resources.** Fonts (the Inter and Fraunces typefaces), icons, styles and images
+- **No third-party resources.** Fonts (the Geist and Fraunces typefaces), icons, styles and images
   are all served from this domain. Nothing is loaded from CDNs, Google Fonts, social networks or any other external
   service, so visiting a page does not contact anyone except the server hosting this site.
 - **No embeds, forms or comment systems.**
